@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C276F17F1CD2A898005011A0 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = C276F17E1CD2A898005011A0 /* Vehicle.m */; };
 		C2E4DB691CD046120081F4DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4DB681CD046120081F4DC /* main.m */; };
 		C2E4DB6C1CD046120081F4DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4DB6B1CD046120081F4DC /* AppDelegate.m */; };
 		C2E4DB6F1CD046120081F4DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4DB6E1CD046120081F4DC /* ViewController.m */; };
@@ -15,7 +16,6 @@
 		C2E4DB771CD046120081F4DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2E4DB751CD046120081F4DC /* LaunchScreen.storyboard */; };
 		C2E4DB821CD046120081F4DC /* GettersSettersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4DB811CD046120081F4DC /* GettersSettersTests.m */; };
 		C2E4DB8D1CD046120081F4DC /* GettersSettersUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4DB8C1CD046120081F4DC /* GettersSettersUITests.m */; };
-		C2E4DB9C1CD046720081F4DC /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E4DB9B1CD046720081F4DC /* Vehicle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C276F17D1CD2A898005011A0 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		C276F17E1CD2A898005011A0 /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 		C2E4DB641CD046120081F4DC /* GettersSetters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettersSetters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E4DB681CD046120081F4DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2E4DB6A1CD046120081F4DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,8 +54,6 @@
 		C2E4DB881CD046120081F4DC /* GettersSettersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GettersSettersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E4DB8C1CD046120081F4DC /* GettersSettersUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GettersSettersUITests.m; sourceTree = "<group>"; };
 		C2E4DB8E1CD046120081F4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2E4DB9A1CD046720081F4DC /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
-		C2E4DB9B1CD046720081F4DC /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 		C2E4DB661CD046120081F4DC /* GettersSetters */ = {
 			isa = PBXGroup;
 			children = (
-				C2E4DB9A1CD046720081F4DC /* Vehicle.h */,
-				C2E4DB9B1CD046720081F4DC /* Vehicle.m */,
+				C276F17D1CD2A898005011A0 /* Vehicle.h */,
+				C276F17E1CD2A898005011A0 /* Vehicle.m */,
 				C2E4DB6A1CD046120081F4DC /* AppDelegate.h */,
 				C2E4DB6B1CD046120081F4DC /* AppDelegate.m */,
 				C2E4DB6D1CD046120081F4DC /* ViewController.h */,
@@ -275,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E4DB9C1CD046720081F4DC /* Vehicle.m in Sources */,
+				C276F17F1CD2A898005011A0 /* Vehicle.m in Sources */,
 				C2E4DB6F1CD046120081F4DC /* ViewController.m in Sources */,
 				C2E4DB6C1CD046120081F4DC /* AppDelegate.m in Sources */,
 				C2E4DB691CD046120081F4DC /* main.m in Sources */,
@@ -504,6 +504,7 @@
 				C2E4DB931CD046120081F4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2E4DB941CD046120081F4DC /* Build configuration list for PBXNativeTarget "GettersSettersTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +513,7 @@
 				C2E4DB961CD046120081F4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2E4DB971CD046120081F4DC /* Build configuration list for PBXNativeTarget "GettersSettersUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +522,7 @@
 				C2E4DB991CD046120081F4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

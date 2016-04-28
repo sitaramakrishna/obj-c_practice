@@ -19,13 +19,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
     Vehicle *car = [[Vehicle alloc]init];
-    car.odometer = -100;
+    car.odometer = 112; // this will not set the odometer to -100, because in setOdometer:, we're making sure that this value must be greater than what car.odometer currently is (0 before being set to anything)
     
     NSLog(@"Odometer: %lu", car.odometer);
     
-    car.model = @"Honda Civic";
     
+    car.model = @"Honda Civic";
     NSLog(@"I drive a %@", car.model);
 }
 

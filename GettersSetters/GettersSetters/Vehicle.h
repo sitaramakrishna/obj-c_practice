@@ -2,7 +2,7 @@
 //  Vehicle.h
 //  GettersSetters
 //
-//  Created by David Perkins on 4/26/16.
+//  Created by David Perkins on 4/28/16.
 //  Copyright © 2016 David Perkins. All rights reserved.
 //
 
@@ -10,7 +10,8 @@
 
 @interface Vehicle : NSObject
 
-@property (nonatomic) long odometer;
-@property (nonatomic, strong) NSString *model;
+@property(nonatomic) long odometer;
+@property(nonatomic, strong) NSString *model;
+
 
 @end

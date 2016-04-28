@@ -17,41 +17,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *firstName = @"John"; // this is a string literal
     
-    NSString *allocatedString = [[NSString alloc]init]; // likely never going to allocate empty string
+    NSString *firstName = @"David";
+    NSString *allocatedString = [[NSString alloc]init]; // almost never going to use this, work with string literals
     
-    NSLog(@"Name: %@", firstName); // like string interpolation, proper way to print variables
+    NSLog(@"Name: %@", firstName); // prints Name: David
     
     NSString *fullName = [NSString stringWithFormat:@"%@ Smith %@", firstName, @"Charles"];
     
-    NSString *display = [fullName stringByAppendingString:@" - Died 1448"];
+    NSLog(@"%@", fullName); // prints David Smith Charles
     
-    NSLog(@"Fullname: %@", fullName);
+    NSString *display = [fullName stringByAppendingString:@" - 2080"];
     
-    NSLog(@"%@", display);
+    NSLog(@"%@", display); // prints David Smith Charles - 2080
     
-    
+    // String comparisons
     
     NSString *var1 = @"Junk";
     NSString *var2 = @"in the trunk";
     NSString *var3 = @"junk";
     
-    // How to compare strings in Objective-C
     if (![var1 isEqualToString:var2]) {
-        
-        NSLog(@"They are not the same");
-        
+        NSLog(@"They are not the same!");
     }
     
     if ([var1.lowercaseString isEqualToString:var3]) {
-        NSLog(@"It's a match");
+        NSLog(@"We gotteth here!");
     }
     
     if ([var1 caseInsensitiveCompare:var3] == NSOrderedSame) {
-        
-        NSLog(@"Woohoo");
-        
+        NSLog(@"Woohoo!");
     }
     
 }

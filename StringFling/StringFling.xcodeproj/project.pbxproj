@@ -498,6 +498,7 @@
 				C2E4DC531CD07A830081F4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2E4DC541CD07A830081F4DC /* Build configuration list for PBXNativeTarget "StringFlingTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +507,7 @@
 				C2E4DC561CD07A830081F4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2E4DC571CD07A830081F4DC /* Build configuration list for PBXNativeTarget "StringFlingUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +516,7 @@
 				C2E4DC591CD07A830081F4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

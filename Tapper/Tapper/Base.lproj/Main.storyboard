@@ -6,8 +6,8 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -41,7 +41,7 @@
                                 </constraints>
                                 <state key="normal" image="playbtn"/>
                                 <connections>
-                                    <action selector="playBtnPressed:" destination="TkZ-2a-GFC" eventType="touchUpInside" id="bOq-Fl-P0c"/>
+                                    <action selector="playButtonPressed:" destination="TkZ-2a-GFC" eventType="touchUpInside" id="c22-Hw-Ogy"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sc-5f-JTL" userLabel="CoinBtn">
@@ -52,7 +52,7 @@
                                 </constraints>
                                 <state key="normal" image="coin"/>
                                 <connections>
-                                    <action selector="tapBtnPressed:" destination="TkZ-2a-GFC" eventType="touchUpInside" id="Sh5-fM-nOJ"/>
+                                    <action selector="tapButtonPressed:" destination="TkZ-2a-GFC" eventType="touchUpInside" id="Pmr-oQ-1Gc"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 Taps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwg-Xr-qnU" userLabel="TapsLbl">
@@ -72,7 +72,10 @@
                                     <constraint firstAttribute="height" constant="45" id="FWs-wV-c3c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TkZ-2a-GFC" id="Gw4-1r-4jb"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -95,11 +98,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="numTapsLabel" destination="Hwg-Xr-qnU" id="IH8-YW-N7K"/>
-                        <outlet property="playBtn" destination="ybp-TY-o7o" id="jJA-mj-Q9l"/>
-                        <outlet property="tapBtn" destination="7sc-5f-JTL" id="Ocz-hJ-ynq"/>
-                        <outlet property="tapperLogo" destination="uCS-zL-el6" id="eH8-CJ-vOZ"/>
-                        <outlet property="textField" destination="hyz-qf-hTx" id="gN4-V1-THl"/>
+                        <outlet property="numberOfTapsLabel" destination="Hwg-Xr-qnU" id="9ca-WM-mYE"/>
+                        <outlet property="playButton" destination="ybp-TY-o7o" id="1IR-Yi-oQL"/>
+                        <outlet property="tapButton" destination="7sc-5f-JTL" id="7r1-8Q-n5K"/>
+                        <outlet property="tapperLogo" destination="uCS-zL-el6" id="J7f-0U-TZB"/>
+                        <outlet property="textField" destination="hyz-qf-hTx" id="pps-j8-QgL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcC-zX-oMI" sceneMemberID="firstResponder"/>

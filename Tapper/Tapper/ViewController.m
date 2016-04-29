@@ -10,7 +10,15 @@
 
 @interface ViewController ()
 
-
+@property (weak, nonatomic) IBOutlet UIImageView *tapperLogo;
+@property (weak, nonatomic) IBOutlet UIButton *tapButton;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfTapsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+- (IBAction)playButtonPressed:(UIButton *)sender;
+- (IBAction)tapButtonPressed:(UIButton *)sender;
+@property (nonatomic) NSNumber *currentTaps;
+@property (nonatomic) NSNumber *tapsToWin;
 
 @end
 
@@ -19,70 +27,77 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _tapsToWin = [NSNumber numberWithInt:0];
-    _currentNumberTaps = [NSNumber numberWithInt:0];
-    
-    _numTapsLabel.text = @"0";
-    
+    _currentTaps = 0;
+    _tapsToWin = 0;
     _tapperLogo.hidden = false;
+    _tapButton.hidden = true;
     _textField.hidden = false;
-    _numTapsLabel.hidden = true;
-    _playBtn.hidden = false;
-    _tapBtn.hidden = true;
+    _numberOfTapsLabel.hidden = true;
+    _playButton.hidden = false;
     
 }
 
 
 
-- (IBAction)tapBtnPressed:(id)sender {
+- (IBAction)playButtonPressed:(id)sender {
     
-    _currentNumberTaps =  [NSNumber numberWithInt:[_currentNumberTaps intValue] + 1];
-    
-    NSLog(@"%@", _currentNumberTaps);
-    
-    NSLog(@"%@", _tapsToWin);
-    
-    if (_currentNumberTaps < _tapsToWin) {
+    if (_textField.text.intValue > 0) {
         
-        _numTapsLabel.text = [NSString stringWithFormat:@"%@", _currentNumberTaps];
+        _currentTaps = 0;
+        _tapsToWin = [NSNumber numberWithInt:_textField.text.intValue];
+        _tapperLogo.hidden = true;
+        _tapButton.hidden = false;
+        _textField.hidden = true;
+        _numberOfTapsLabel.hidden = false;
+        _playButton.hidden = true;
+        
+        _numberOfTapsLabel.text = @"0 taps";
+        
+    }
+    
+}
+
+
+- (IBAction)tapButtonPressed:(UIButton *)sender {
+    
+    _currentTaps = [NSNumber numberWithInt:_currentTaps.intValue + 1];
+    
+    if (_currentTaps < _tapsToWin) {
+        
+        _numberOfTapsLabel.text = [NSString stringWithFormat:@"%@ taps", _currentTaps];
+        
         
     } else {
         
-        // player has won
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"You won!" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Woohoo!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            _currentTaps = 0;
+            _tapsToWin = 0;
+            _tapperLogo.hidden = false;
+            _tapButton.hidden = true;
+            _textField.hidden = false;
+            _numberOfTapsLabel.hidden = true;
+            _playButton.hidden = false;
+            
+        }];
         
-        _numTapsLabel.text = @"You won!";
-        
-        _tapsToWin = [NSNumber numberWithInt:0];
-        _currentNumberTaps = [NSNumber numberWithInt:0];
-        
-        _tapperLogo.hidden = false;
-        _textField.hidden = false;
-        _numTapsLabel.hidden = false;
-        _playBtn.hidden = false;
-        _tapBtn.hidden = true;
-        
+        [alert addAction:ok];
+        [self presentViewController:alert animated:true completion:nil];
     }
     
 }
 
-- (IBAction)playBtnPressed:(id)sender {
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    _numTapsLabel.text = @"0";
-    
-    if (_textField.text.intValue > 0) {
-    
-        _currentNumberTaps = [NSNumber numberWithInt:0];
-        
-        _tapsToWin = [NSNumber numberWithInt:_textField.text.integerValue];
-        
-        _tapperLogo.hidden = true;
-        _textField.hidden = true;
-        _numTapsLabel.hidden = false;
-        _playBtn.hidden = true;
-        _tapBtn.hidden = false;
-        
-    }
+    [_textField resignFirstResponder];
     
 }
+
 
 @end
+
+
+
+
+

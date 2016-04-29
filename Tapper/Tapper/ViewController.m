@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    int currentTaps;
+    int tapsToWin;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *tapperLogo;
 @property (weak, nonatomic) IBOutlet UIButton *tapButton;
@@ -17,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 - (IBAction)playButtonPressed:(UIButton *)sender;
 - (IBAction)tapButtonPressed:(UIButton *)sender;
-@property (nonatomic) NSNumber *currentTaps;
-@property (nonatomic) NSNumber *tapsToWin;
 
 @end
 
@@ -27,8 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _currentTaps = 0;
-    _tapsToWin = 0;
+    currentTaps = 0;
+    tapsToWin = 0;
     _tapperLogo.hidden = false;
     _tapButton.hidden = true;
     _textField.hidden = false;
@@ -43,8 +44,8 @@
     
     if (_textField.text.intValue > 0) {
         
-        _currentTaps = 0;
-        _tapsToWin = [NSNumber numberWithInt:_textField.text.intValue];
+        currentTaps = 0;
+        tapsToWin = _textField.text.intValue;
         _tapperLogo.hidden = true;
         _tapButton.hidden = false;
         _textField.hidden = true;
@@ -60,11 +61,11 @@
 
 - (IBAction)tapButtonPressed:(UIButton *)sender {
     
-    _currentTaps = [NSNumber numberWithInt:_currentTaps.intValue + 1];
+    currentTaps++;
     
-    if (_currentTaps < _tapsToWin) {
+    if (currentTaps < tapsToWin) {
         
-        _numberOfTapsLabel.text = [NSString stringWithFormat:@"%@ taps", _currentTaps];
+        _numberOfTapsLabel.text = [NSString stringWithFormat:@"%d taps", currentTaps];
         
         
     } else {
@@ -72,8 +73,8 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"You won!" message:nil preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Woohoo!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            _currentTaps = 0;
-            _tapsToWin = 0;
+            currentTaps = 0;
+            tapsToWin = 0;
             _tapperLogo.hidden = false;
             _tapButton.hidden = true;
             _textField.hidden = false;

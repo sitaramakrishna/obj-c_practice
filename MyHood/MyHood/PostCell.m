@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *postImg;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
-
 @property (nonatomic) DataService *dataService;
 
 @end
@@ -25,15 +24,15 @@
     [super awakeFromNib];
     // Initialization code
     
+    _dataService = [DataService sharedService];
     _postImg.layer.cornerRadius = _postImg.frame.size.width / 2;
     _postImg.clipsToBounds = YES;
 }
 
 -(void)configureCell:(Post *)post {
-    NSLog(@"configureCell %@", post.title);
     _titleLabel.text = post.title;
     _descLabel.text = post.postDesc;
-    _postImg.image = [[_dataService instance]imageForPath:post.imagePath];
+    _postImg.image = [_dataService imageForPath:post.imagePath];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

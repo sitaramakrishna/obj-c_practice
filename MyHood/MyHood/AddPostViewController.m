@@ -27,8 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _dataService = [[DataService alloc]init];
+
+    _dataService = [DataService sharedService];
     _imagePicker = [[UIImagePickerController alloc]init];
     _imagePicker.delegate = self;
     _postImg.layer.cornerRadius = _postImg.frame.size.width / 2;
@@ -53,9 +53,8 @@
     
     if (title && desc && img) {
         
-        NSString *imgPath = [[_dataService instance]saveImageAndCreatePath:img];
+        NSString *imgPath = [_dataService saveImageAndCreatePath:img];
         Post *post = [[Post alloc]initWithImagePath:imgPath title:title description:desc];
-        
         [_dataService addPost:post];
         [self dismissViewControllerAnimated:YES completion:nil];
         

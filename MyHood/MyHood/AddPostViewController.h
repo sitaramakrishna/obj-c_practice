@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface AddPostViewController : ViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AddPostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end

@@ -13,19 +13,29 @@
 
 @implementation DataService
 
--(id)init {
++ (id)sharedService {
     
+    static DataService *sharedDataService = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedDataService = [[self alloc]init];
+    });
+    
+    return sharedDataService;
+}
+
+- (id)init {
     if (self = [super init]) {
+        
+        _loadedPosts = [[NSMutableArray alloc]init];
         
     }
     
     return self;
-    
 }
 
 -(void)savePosts {
     
-    NSLog(@"savePosts %@", _loadedPosts);
     NSData *postsData = [NSKeyedArchiver archivedDataWithRootObject:_loadedPosts];
     [[NSUserDefaults standardUserDefaults]setObject:postsData forKey:@"posts"];
     [[NSUserDefaults standardUserDefaults]synchronize];
@@ -35,15 +45,20 @@
 -(void)loadPosts {
     
     NSData *postsData = [[NSUserDefaults standardUserDefaults]objectForKey:@"posts"];
-    NSMutableArray *postsArray = [NSKeyedUnarchiver unarchiveObjectWithData:postsData];
-    
     if (postsData) {
+        NSMutableArray *postsArray = [NSKeyedUnarchiver unarchiveObjectWithData:postsData];
         if (postsArray) {
             _loadedPosts = postsArray;
+            
+        } else {
+            NSLog(@"We have no posts array");
         }
+    } else {
+        NSLog(@"We have no posts data");
     }
     
-    [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:@"postsLoaded" object:nil]];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"postsLoaded" object:nil];
+    
 }
 
 -(NSString *)saveImageAndCreatePath : (UIImage *)image {
@@ -66,10 +81,9 @@
 
 -(void)addPost:(Post *)post {
     
-    
-    NSLog(@"addPost %@", post.title);
     [_loadedPosts addObject:post];
-    NSLog(@"addPost2 %@", _loadedPosts);
+    NSLog(@"addPost: %@", _loadedPosts.debugDescription);
+    NSLog(@"addPost2: %@", _loadedPosts.debugDescription);
     [self savePosts];
     [self loadPosts];
     
@@ -80,7 +94,6 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true);
     NSString *fullPath = paths[0];
     return [fullPath stringByAppendingPathComponent:name];
-    
     
 }
 

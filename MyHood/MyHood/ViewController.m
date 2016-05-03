@@ -23,10 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _dataService = [DataService sharedService];
+    [_dataService loadPosts];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _dataService = [[DataService alloc]init];
-    [[_dataService instance]loadPosts];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onPostsLoaded:) name:@"postsLoaded" object:nil];
     
 }
@@ -40,26 +40,28 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Post *post = _dataService.loadedPosts[indexPath.row];
-    NSLog(@"cellForRowAtIndexPath: %@", post);
+    
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     if (cell) {
+        
         [cell configureCell:post];
         return cell;
     } else {
-        PostCell *cell;
+        
+        cell = [[PostCell alloc]init];
         [cell configureCell:post];
         return cell;
     }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return  1; //_dataService.loadedPosts.count;
+    return _dataService.loadedPosts.count;
     
 }
 
 -(void)onPostsLoaded:(id)notif {
-    NSLog(@"onPostsLoaded %@",_dataService.loadedPosts);
     [[self tableView]reloadData];
 }
 

@@ -12,13 +12,14 @@
 
 @interface DataService : NSObject
 
-@property (nonatomic, strong) DataService *instance;
 @property (nonatomic, strong) NSMutableArray *loadedPosts;
+@property (nonatomic, strong) DataService *instance;
 
++ (id)sharedService;
 -(void)savePosts;
 -(void)loadPosts;
--(NSString *)saveImageAndCreatePath : (UIImage *)image;
--(UIImage *)imageForPath : (NSString *)path;
+-(NSString *)saveImageAndCreatePath:(UIImage *)image;
+-(UIImage *)imageForPath :(NSString *)path;
 -(void)addPost:(Post *)post;
 -(NSString *)documentsPathForFileName:(NSString *)name;
 

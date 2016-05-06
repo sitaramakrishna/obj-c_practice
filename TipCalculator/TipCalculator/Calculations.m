@@ -14,13 +14,14 @@
 // Tip amount label
 -(float)findTipFromSubtotal:(float)subtotal andTipPercent:(float)tipPercent {
     
-    return [[NSString stringWithFormat:@"%.2f", (subtotal) * (tipPercent / 100)]floatValue];
+    return roundf(((subtotal) * (tipPercent / 100)) * 100) / 100;
+    
 }
 
 // Total label
 -(float)findTotalFromSubtotal:(float)subtotal andTipPercent:(float)tipPercent {
     
-    return [[NSString stringWithFormat:@"%.2f", (subtotal + (subtotal * (tipPercent/100)))]floatValue];
+    return roundf((subtotal + (subtotal * (tipPercent/100)))*100) / 100;
     
 }
 

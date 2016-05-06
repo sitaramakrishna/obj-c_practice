@@ -6,6 +6,8 @@ Sample Objective-C projects. Most projects here are based on those from Sam Lu's
     -Work with NSStrings
 <h5>Tap Or Hold Counter - May 5, 2016</h5>
   I learned how to:
-  -Trigger functions using NSTimer
-  -Use multi-action UIButton
-
+    -Trigger functions using NSTimer
+    -Use multi-action UIButton
+<h5>iAd - May 5, 2016</h5>
+  I learned how to:
+    -Integrate iAd

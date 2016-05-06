@@ -1,6 +1,12 @@
 # obj-c_practice
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
+<h5>TableViews and Segues - May 6, 2016</h5>
+  I learned how to:
+  <ul>
+    <li>Use dynamic cells in a table view</li>
+    <li>Pass data between view controllers in a navigation controller</li>
+  </ul>
 <h5>Tip Calculator - May 6, 2016</h5>
   I learned how to:
   <ul>

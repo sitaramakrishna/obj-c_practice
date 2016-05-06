@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eas-Xc-CCt">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="g7W-nk-xYW">
+            <objects>
+                <viewController id="Eas-Xc-CCt" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="08b-u2-uVV"/>
+                        <viewControllerLayoutGuide type="bottom" id="usE-Ps-wjd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ipi-ah-tBP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXU-lp-4xf">
+                                <rect key="frame" x="106" y="157" width="108" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Gu8-2G-Cts"/>
+                                    <constraint firstAttribute="width" constant="108" id="xXJ-6j-C2T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="62"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zs-jw-0q8">
+                                <rect key="frame" x="111" y="307" width="98" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="LdO-vB-Ip1"/>
+                                    <constraint firstAttribute="height" constant="57" id="ex8-Cy-hIO"/>
+                                </constraints>
+                                <state key="normal" title="Tap Or Hold"/>
+                                <connections>
+                                    <action selector="increment:" destination="Eas-Xc-CCt" eventType="touchUpInside" id="Tuw-MM-ewa"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4b-QM-FZ5">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Counter" id="m2F-U1-ErB">
+                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="jOF-sJ-Og7">
+                                            <connections>
+                                                <action selector="reset:" destination="Eas-Xc-CCt" id="bjS-j3-ng0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Zs-jw-0q8" firstAttribute="centerX" secondItem="Ipi-ah-tBP" secondAttribute="centerX" id="2T0-8p-lyo"/>
+                            <constraint firstItem="gXU-lp-4xf" firstAttribute="centerY" secondItem="Ipi-ah-tBP" secondAttribute="centerY" constant="-82" id="HAC-gy-dzT"/>
+                            <constraint firstItem="7Zs-jw-0q8" firstAttribute="centerY" secondItem="Ipi-ah-tBP" secondAttribute="centerY" constant="52" id="h0g-TM-bdA"/>
+                            <constraint firstAttribute="trailing" secondItem="G4b-QM-FZ5" secondAttribute="trailing" id="h6T-Ww-ZLJ"/>
+                            <constraint firstItem="gXU-lp-4xf" firstAttribute="centerX" secondItem="Ipi-ah-tBP" secondAttribute="centerX" id="jIC-Te-Nqd"/>
+                            <constraint firstItem="G4b-QM-FZ5" firstAttribute="leading" secondItem="Ipi-ah-tBP" secondAttribute="leading" id="jwg-EN-vmG"/>
+                            <constraint firstItem="G4b-QM-FZ5" firstAttribute="top" secondItem="08b-u2-uVV" secondAttribute="bottom" id="oKK-WO-CzR"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="countLabel" destination="gXU-lp-4xf" id="6FD-fk-ar0"/>
+                        <outlet property="tapHoldBtn" destination="7Zs-jw-0q8" id="Jl1-uy-n6p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBN-5h-Cwy" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="368"/>
+        </scene>
+    </scenes>
+</document>

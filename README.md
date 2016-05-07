@@ -1,6 +1,13 @@
 # obj-c_practice
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
+<h5>Getting Current Date And Time - May 6, 2016</h5>
+  I learned how to:
+  <ul>
+    <li>Customize NSDate & NSDateFormatter</li>
+    <li>Get user's current time zone</li>
+    <li>Add multiple transformation actions to a single view, autoreverse, then repeat</li>
+  </ul>
 <h5>TableViews and Segues - May 6, 2016</h5>
   I learned how to:
   <ul>

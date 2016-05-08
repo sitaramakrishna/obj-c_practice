@@ -1,6 +1,12 @@
 # obj-c_practice
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
+<h5>Editing TableViews Using MVC - May 7, 2016</h5>
+  I learned how to:
+  <ul>
+    <li>Rearrange rows, swipe to delete, pull to refresh</li>
+    <li>Pass date between two view controllers through the Model</li>
+  </ul>
 <h5>Camera Roll - May 6, 2016</h5>
   I learned how to:
   <ul>

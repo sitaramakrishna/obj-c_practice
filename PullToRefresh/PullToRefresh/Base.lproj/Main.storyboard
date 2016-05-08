@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w1w-n5-ijP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w1w-n5-ijP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Grocery List-->
@@ -29,8 +30,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Grocery List" id="06x-Qs-fJN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="UqM-Rr-xLb"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LWn-D4-ukv"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="UqM-Rr-xLb">
+                            <connections>
+                                <action selector="editTableView:" destination="7kd-T1-oRA" id="0i2-N1-iMq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LWn-D4-ukv">
+                            <connections>
+                                <segue destination="Jug-h5-Kmc" kind="show" id="hAi-yl-GNI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="W3H-uC-NMf">
@@ -51,6 +60,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFt-53-ymc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="871" y="387"/>
+        </scene>
+        <!--Add Item View Controller-->
+        <scene sceneID="NG7-pe-5ac">
+            <objects>
+                <viewController id="Jug-h5-Kmc" customClass="AddItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7BL-DW-d1N"/>
+                        <viewControllerLayoutGuide type="bottom" id="ESq-dp-fH2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NXz-Sd-viL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Yo what's good" translatesAutoresizingMaskIntoConstraints="NO" id="JVQ-bA-OIr">
+                                <rect key="frame" x="20" y="20" width="280" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Jug-h5-Kmc" id="joQ-vv-TDk"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JVQ-bA-OIr" firstAttribute="trailing" secondItem="NXz-Sd-viL" secondAttribute="trailingMargin" id="5nE-Yu-Jsz"/>
+                            <constraint firstAttribute="bottom" secondItem="JVQ-bA-OIr" secondAttribute="bottom" id="ACc-zt-R46"/>
+                            <constraint firstItem="JVQ-bA-OIr" firstAttribute="top" secondItem="NXz-Sd-viL" secondAttribute="top" constant="20" id="Bgh-z7-hqi"/>
+                            <constraint firstItem="ESq-dp-fH2" firstAttribute="top" secondItem="JVQ-bA-OIr" secondAttribute="bottom" id="MJA-Wp-ORy"/>
+                            <constraint firstAttribute="trailing" secondItem="JVQ-bA-OIr" secondAttribute="trailing" constant="20" id="cYr-bE-BJa"/>
+                            <constraint firstItem="JVQ-bA-OIr" firstAttribute="top" secondItem="7BL-DW-d1N" secondAttribute="bottom" id="jU0-Kw-yke"/>
+                            <constraint firstItem="JVQ-bA-OIr" firstAttribute="leading" secondItem="NXz-Sd-viL" secondAttribute="leading" constant="20" id="rQn-hT-H1U"/>
+                            <constraint firstItem="JVQ-bA-OIr" firstAttribute="leading" secondItem="NXz-Sd-viL" secondAttribute="leadingMargin" id="rVb-YC-TqC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5nE-Yu-Jsz"/>
+                                <exclude reference="jU0-Kw-yke"/>
+                                <exclude reference="rVb-YC-TqC"/>
+                                <exclude reference="MJA-Wp-ORy"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textView" destination="JVQ-bA-OIr" id="MKc-Cl-2d0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cb1-5R-Ko5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jbm-jS-qd3">

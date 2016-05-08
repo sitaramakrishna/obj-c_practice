@@ -12,6 +12,7 @@
 @interface TableViewController ()
 @property (nonatomic, strong) Groceries *groceries;
 @property (nonatomic, strong) NSArray *array2;
+- (IBAction)editTableView:(id)sender;
 @end
 
 @implementation TableViewController
@@ -30,6 +31,14 @@
     [refreshMe addTarget:self action:@selector(handleRefresh:)
         forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshMe;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    NSLog(@"2%@", _groceries.groceryList);
+    [[self tableView]reloadData];
+    
 }
 
 -(void)handleRefresh:(UIRefreshControl *)refreshControl {
@@ -56,6 +65,38 @@
     return _groceries.groceryList.count;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+    
+}
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+    UITableViewCell *itemToMove = [[_groceries groceryList]objectAtIndex:sourceIndexPath.row];
+    [[_groceries groceryList]removeObjectAtIndex:sourceIndexPath.row];
+    [[_groceries groceryList]insertObject:itemToMove atIndex:destinationIndexPath.row];
+    
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //remove the deleted object from your data source.
+        //If your data source is an NSMutableArray, do this
+        
+        [[_groceries groceryList]removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        
+    }
+    
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -66,4 +107,9 @@
 }
 
 
+- (IBAction)editTableView:(id)sender {
+    
+    self.editing = !self.editing;
+    
+}
 @end

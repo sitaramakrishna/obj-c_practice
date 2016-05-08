@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C2D504211CDDACE20069B0AB"
-               BuildableName = "PullToRefresh.app"
-               BlueprintName = "PullToRefresh"
-               ReferencedContainer = "container:PullToRefresh.xcodeproj">
+               BuildableName = "TableViews.app"
+               BlueprintName = "TableViews"
+               ReferencedContainer = "container:TableViews.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C2D5043A1CDDACE20069B0AB"
-               BuildableName = "PullToRefreshTests.xctest"
-               BlueprintName = "PullToRefreshTests"
-               ReferencedContainer = "container:PullToRefresh.xcodeproj">
+               BuildableName = "TableViews.xctest"
+               BlueprintName = "TableViewsTests"
+               ReferencedContainer = "container:TableViews.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C2D504451CDDACE20069B0AB"
-               BuildableName = "PullToRefreshUITests.xctest"
-               BlueprintName = "PullToRefreshUITests"
-               ReferencedContainer = "container:PullToRefresh.xcodeproj">
+               BuildableName = "TableViews.xctest"
+               BlueprintName = "TableViewsUITests"
+               ReferencedContainer = "container:TableViews.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C2D504211CDDACE20069B0AB"
-            BuildableName = "PullToRefresh.app"
-            BlueprintName = "PullToRefresh"
-            ReferencedContainer = "container:PullToRefresh.xcodeproj">
+            BuildableName = "TableViews.app"
+            BlueprintName = "TableViews"
+            ReferencedContainer = "container:TableViews.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C2D504211CDDACE20069B0AB"
-            BuildableName = "PullToRefresh.app"
-            BlueprintName = "PullToRefresh"
-            ReferencedContainer = "container:PullToRefresh.xcodeproj">
+            BuildableName = "TableViews.app"
+            BlueprintName = "TableViews"
+            ReferencedContainer = "container:TableViews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C2D504211CDDACE20069B0AB"
-            BuildableName = "PullToRefresh.app"
-            BlueprintName = "PullToRefresh"
-            ReferencedContainer = "container:PullToRefresh.xcodeproj">
+            BuildableName = "TableViews.app"
+            BlueprintName = "TableViews"
+            ReferencedContainer = "container:TableViews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

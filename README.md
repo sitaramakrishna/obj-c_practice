@@ -1,6 +1,12 @@
 # obj-c_practice
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
+<h5>Singletons, TableView Editing - May 8, 2016</h5>
+  I learned how to:
+  <ul>
+    <li>Use singletons to share a single instance across view controllers</li>
+    <li>Swipe to delete, rearrange, add/remove objects from a table view</li>
+  </ul>
 <h5>Editing TableViews Using MVC - May 7, 2016</h5>
   I learned how to:
   <ul>

@@ -19,7 +19,7 @@
                 @"avatarBig" : @"avatarBig1",
                 @"mobile" : @"555-123-4567",
                 @"email" : @"matt.ryan@gmail.com",
-                @"notes" : @"Likes to wear hates. Used to be an artist, now he's a freelance photographer who travels a lot."
+                @"notes" : @"Likes to wear hats. Used to be an artist, now he's a freelance photographer who travels a lot."
             },
             @{
                 @"name" : @"Stacy Chu",
@@ -49,7 +49,7 @@
                  @"avatarBig" : @"avatarBig4",
                  @"mobile" : @"555-123-4567",
                  @"email" : @"lauren.carson@gmail.com",
-                 @"notes" : @"Likes to wear hates. Used to be an artist, now he's a freelance photographer who travels a lot."
+                 @"notes" : @"Likes to wear hats. Used to be an artist, now he's a freelance photographer who travels a lot."
              },
              @{
                  @"name" : @"Maggie Bryant",
@@ -73,7 +73,7 @@
                  @"avatarBig" : @"avatarBig7",
                  @"mobile" : @"555-123-4567",
                  @"email" : @"marcus.james@gmail.com",
-                 @"notes" : @"Likes to wear hates. Used to be an artist, now he's a freelance photographer who travels a lot."
+                 @"notes" : @"Likes to wear hats. Used to be an artist, now he's a freelance photographer who travels a lot."
              },
              @{
                  @"name" : @"Phil Harmonic",
@@ -81,7 +81,7 @@
                  @"avatarBig" : @"avatarBig8",
                  @"mobile" : @"555-123-4567",
                  @"email" : @"philharmonic@gmail.com",
-                 @"notes" : @"Likes to wear hates. Used to be an artist, now he's a freelance photographer who travels a lot."
+                 @"notes" : @"Likes to wear hats. Used to be an artist, now he's a freelance photographer who travels a lot."
              },
              @{
                  @"name" : @"Matt Flowers",
@@ -89,7 +89,7 @@
                  @"avatarBig" : @"avatarBig9",
                  @"mobile" : @"555-123-4567",
                  @"email" : @"matt.flowers@gmail.com",
-                 @"notes" : @"Likes to wear hates. Used to be an artist, now he's a freelance photographer who travels a lot."
+                 @"notes" : @"Likes to wear hats. Used to be an artist, now he's a freelance photographer who travels a lot."
              },
 
              ];

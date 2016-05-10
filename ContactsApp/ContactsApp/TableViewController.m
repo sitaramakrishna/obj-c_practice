@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "ContactInfo.h"
 #import "TableViewCell.h"
+#import "ViewController.h"
 
 @interface TableViewController ()
 @property (nonatomic,strong) ContactInfo *contacts;
@@ -68,6 +69,55 @@
     header.textLabel.textAlignment = NSTextAlignmentLeft;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"segue" sender:[tableView cellForRowAtIndexPath:indexPath]];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"segue"]) {
+        
+        ViewController *secondVC = (ViewController*)segue.destinationViewController;
+        
+        switch ([sender tag]) {
+            case 0:
+                
+                for (NSDictionary *dict in _contacts.recent) {
+                    if ([[dict valueForKey:@"name"]isEqualToString:[[sender nameLabel]text]]) {
+                        
+                        NSUInteger index = [[_contacts recent]indexOfObject:dict];
+                        
+                        secondVC.name = _contacts.recent[index][@"name"];
+                        secondVC.email = _contacts.recent[index][@"email"];
+                        secondVC.phone = _contacts.recent[index][@"mobile"];
+                        secondVC.note = _contacts.recent[index][@"notes"];
+                        secondVC.avatar = [UIImage imageNamed: _contacts.recent[index][@"avatarBig"]];
+                        
+                    }
+                }
+            case 1:
+                for (NSDictionary *dict in _contacts.friends) {
+                    if ([[dict valueForKey:@"name"]isEqualToString:[[sender nameLabel]text]]) {
+                        
+                        NSUInteger index = [[_contacts friends]indexOfObject:dict];
+                        
+                        secondVC.name = _contacts.friends[index][@"name"];
+                        secondVC.email = _contacts.friends[index][@"email"];
+                        secondVC.phone = _contacts.friends[index][@"mobile"];
+                        secondVC.note = _contacts.friends[index][@"notes"];
+                        secondVC.avatar = [UIImage imageNamed: _contacts.friends[index][@"avatarBig"]];
+                    }
+                }
+                
+            default:
+                break;
+        }
+    }
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -79,10 +129,12 @@
         case 0:
             cell.nameLabel.text = _contacts.recent[indexPath.row][@"name"];
             cell.imgView.image = [UIImage imageNamed: [NSString stringWithFormat: @"%@", _contacts.recent[indexPath.row][@"avatar"]]];
+            cell.tag = 0;
             return cell;
         case 1:
             cell.nameLabel.text = _contacts.friends[indexPath.row][@"name"];
             cell.imgView.image = [UIImage imageNamed: [NSString stringWithFormat: @"%@", _contacts.friends[indexPath.row][@"avatar"]]];
+            cell.tag = 1;
             return cell;
         default:
             return cell;

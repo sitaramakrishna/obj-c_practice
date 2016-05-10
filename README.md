@@ -1,6 +1,13 @@
 # obj-c_practice
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
+<h5>Dynamic Contacts App - May 9, 2016</h5>
+  I learned how to:
+  <ul>
+    <li>Transfer data from selected cell to next view using a Model</li>
+    <li>Create a custom table view cell</li>
+    <li>Customize table view header properties</li>
+  </ul>
 <h5>TableView Navigation - May 9, 2016</h5>
   I learned how to:
   <ul>

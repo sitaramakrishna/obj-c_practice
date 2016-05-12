@@ -21,7 +21,7 @@
 // Total label
 -(float)findTotalFromSubtotal:(float)subtotal andTipPercent:(float)tipPercent {
     
-    return roundf((subtotal + (subtotal * (tipPercent/100)))*100) / 100;
+    return roundf((subtotal + (subtotal * (tipPercent/100))) *100) / 100;
     
 }
 

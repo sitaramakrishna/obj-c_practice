@@ -10,7 +10,6 @@
 		C233F0031CE524450096C778 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C233F0021CE524450096C778 /* main.m */; };
 		C233F0061CE524450096C778 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C233F0051CE524450096C778 /* AppDelegate.m */; };
 		C233F0091CE524450096C778 /* CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C233F0081CE524450096C778 /* CurrentLocationViewController.m */; };
-		C233F00C1CE524450096C778 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C233F00B1CE524450096C778 /* SecondViewController.m */; };
 		C233F00F1CE524450096C778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C233F00D1CE524450096C778 /* Main.storyboard */; };
 		C233F0111CE524450096C778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C233F0101CE524450096C778 /* Assets.xcassets */; };
 		C233F0141CE524450096C778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C233F0121CE524450096C778 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,8 @@
 		C233F0381CE527500096C778 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C233F0371CE527500096C778 /* CoreLocation.framework */; };
 		C233F03C1CE5341B0096C778 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C233F03B1CE5341B0096C778 /* Foundation.framework */; };
 		C233F03E1CE534220096C778 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C233F03D1CE534220096C778 /* UIKit.framework */; };
+		C2A1CC541CE678550046810A /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC531CE678550046810A /* LocationDetailsViewController.m */; };
+		C2A1CC571CE69AF80046810A /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC561CE69AF80046810A /* CategoryPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +46,6 @@
 		C233F0051CE524450096C778 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C233F0071CE524450096C778 /* CurrentLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationViewController.h; sourceTree = "<group>"; };
 		C233F0081CE524450096C778 /* CurrentLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationViewController.m; sourceTree = "<group>"; };
-		C233F00A1CE524450096C778 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		C233F00B1CE524450096C778 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		C233F00E1CE524450096C778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C233F0101CE524450096C778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C233F0131CE524450096C778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +59,10 @@
 		C233F0371CE527500096C778 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C233F03B1CE5341B0096C778 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C233F03D1CE534220096C778 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C2A1CC521CE678550046810A /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
+		C2A1CC531CE678550046810A /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
+		C2A1CC551CE69AF80046810A /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
+		C2A1CC561CE69AF80046810A /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +170,10 @@
 			children = (
 				C233F0071CE524450096C778 /* CurrentLocationViewController.h */,
 				C233F0081CE524450096C778 /* CurrentLocationViewController.m */,
-				C233F00A1CE524450096C778 /* SecondViewController.h */,
-				C233F00B1CE524450096C778 /* SecondViewController.m */,
+				C2A1CC521CE678550046810A /* LocationDetailsViewController.h */,
+				C2A1CC531CE678550046810A /* LocationDetailsViewController.m */,
+				C2A1CC551CE69AF80046810A /* CategoryPickerViewController.h */,
+				C2A1CC561CE69AF80046810A /* CategoryPickerViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -303,10 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C233F00C1CE524450096C778 /* SecondViewController.m in Sources */,
 				C233F0061CE524450096C778 /* AppDelegate.m in Sources */,
 				C233F0091CE524450096C778 /* CurrentLocationViewController.m in Sources */,
 				C233F0031CE524450096C778 /* main.m in Sources */,
+				C2A1CC571CE69AF80046810A /* CategoryPickerViewController.m in Sources */,
+				C2A1CC541CE678550046810A /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +538,7 @@
 				C233F0301CE524450096C778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C233F0311CE524450096C778 /* Build configuration list for PBXNativeTarget "MyLocationsTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +547,7 @@
 				C233F0331CE524450096C778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C233F0341CE524450096C778 /* Build configuration list for PBXNativeTarget "MyLocationsUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +556,7 @@
 				C233F0361CE524450096C778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

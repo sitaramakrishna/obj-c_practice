@@ -339,7 +339,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="qsR-5Y-x8V" kind="unwind" unwindAction="categoryPickerDidPickCategory:" id="xoD-8X-HGc"/>
+                                    <segue destination="qsR-5Y-x8V" kind="unwind" identifier="PickedCategory" unwindAction="categoryPickerDidPickCategory:" id="xoD-8X-HGc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

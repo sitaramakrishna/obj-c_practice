@@ -50,12 +50,7 @@
     
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    _selectedCategoryName = _categories[indexPath.row];
-    
-}
-
+// Unwind segue back to LocationDetailViewController, THEN categoryPickerDidPickCategory:segue is called on LocationDetailVC
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"PickedCategory"]) {

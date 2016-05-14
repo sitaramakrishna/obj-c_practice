@@ -104,6 +104,7 @@
     
 }
 
+// Unwind segue - method is called when cell is tapped in CategoryPickerVC
 -(IBAction)categoryPickerDidPickCategory:(UIStoryboardSegue *)segue {
     
     CategoryPickerViewController *viewController = segue.sourceViewController;

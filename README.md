@@ -1,6 +1,10 @@
 # obj-c_practice
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
-
+<h5>Project 13 - Core Motion - May 14, 2016</h5>
+  I learned how to:
+  <ul>
+    <li>Use Core Motion to handle the iPhone's gyroscope</li>
+  </ul>
 <h5>Project 12 - Locations with Core Data - May 12, 2016</h5>
   I learned how to:
   <ul>

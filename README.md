@@ -9,7 +9,7 @@ Most sample projects here are based on those from Sam Lu's 100 Days of Swift, ex
 <h5>Project 13 - Core Motion - May 14, 2016</h5>
   I learned how to:
   <ul>
-    <li>Use Core Motion to handle the iPhone's gyroscope</li>
+    <li>Use Core Motion to access iPhone's gyroscope & accelerometer</li>
   </ul>
 <h5>Project 12 - Locations with Core Data - May 12, 2016</h5>
   I learned how to:

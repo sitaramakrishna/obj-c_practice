@@ -81,7 +81,7 @@
     
     self.rotX.text = [NSString stringWithFormat:@" %.2fr/s",rotation.x];
     if(fabs(rotation.x) > fabs(currentMaxRotX))
-    {
+    { 
         currentMaxRotX = rotation.x;
     }
     self.rotY.text = [NSString stringWithFormat:@" %.2fr/s",rotation.y];

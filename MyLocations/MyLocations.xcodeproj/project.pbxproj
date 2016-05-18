@@ -20,6 +20,8 @@
 		C233F03E1CE534220096C778 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C233F03D1CE534220096C778 /* UIKit.framework */; };
 		C24B81AD1CEBAF620066C3A5 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B81AC1CEBAF620066C3A5 /* LocationsViewController.m */; };
 		C24B823C1CEBF3B00066C3A5 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B823B1CEBF3B00066C3A5 /* LocationCell.m */; };
+		C24B823E1CECE1230066C3A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24B823D1CECE1230066C3A5 /* MapKit.framework */; };
+		C24B82411CECE1BB0066C3A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B82401CECE1BB0066C3A5 /* MapViewController.m */; };
 		C2A1CC541CE678550046810A /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC531CE678550046810A /* LocationDetailsViewController.m */; };
 		C2A1CC571CE69AF80046810A /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC561CE69AF80046810A /* CategoryPickerViewController.m */; };
 		C2F027641CEA505D0074EAEA /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F027631CEA505D0074EAEA /* HudView.m */; };
@@ -71,6 +73,9 @@
 		C24B81AC1CEBAF620066C3A5 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
 		C24B823A1CEBF3B00066C3A5 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		C24B823B1CEBF3B00066C3A5 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		C24B823D1CECE1230066C3A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C24B823F1CECE1BB0066C3A5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		C24B82401CECE1BB0066C3A5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		C2A1CC521CE678550046810A /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
 		C2A1CC531CE678550046810A /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		C2A1CC551CE69AF80046810A /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24B823E1CECE1230066C3A5 /* MapKit.framework in Frameworks */,
 				C2F027661CEA793B0074EAEA /* CoreData.framework in Frameworks */,
 				C233F03E1CE534220096C778 /* UIKit.framework in Frameworks */,
 				C233F03C1CE5341B0096C778 /* Foundation.framework in Frameworks */,
@@ -117,6 +123,7 @@
 		C233EFF51CE524450096C778 = {
 			isa = PBXGroup;
 			children = (
+				C24B823D1CECE1230066C3A5 /* MapKit.framework */,
 				C233F0001CE524450096C778 /* MyLocations */,
 				C233F01D1CE524450096C778 /* MyLocationsTests */,
 				C233F0281CE524450096C778 /* MyLocationsUITests */,
@@ -201,6 +208,8 @@
 				C2A1CC561CE69AF80046810A /* CategoryPickerViewController.m */,
 				C24B81AB1CEBAF620066C3A5 /* LocationsViewController.h */,
 				C24B81AC1CEBAF620066C3A5 /* LocationsViewController.m */,
+				C24B823F1CECE1BB0066C3A5 /* MapViewController.h */,
+				C24B82401CECE1BB0066C3A5 /* MapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -361,6 +370,7 @@
 				C233F0061CE524450096C778 /* AppDelegate.m in Sources */,
 				C233F0091CE524450096C778 /* CurrentLocationViewController.m in Sources */,
 				C2F027641CEA505D0074EAEA /* HudView.m in Sources */,
+				C24B82411CECE1BB0066C3A5 /* MapViewController.m in Sources */,
 				C2F027691CEA795C0074EAEA /* Model.xcdatamodeld in Sources */,
 				C2F027821CEAC1B50074EAEA /* Location.m in Sources */,
 				C2F027811CEAC1B50074EAEA /* Location+CoreDataProperties.m in Sources */,

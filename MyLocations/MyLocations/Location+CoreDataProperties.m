@@ -15,7 +15,7 @@
 
 @dynamic latitude;
 @dynamic longitude;
-@dynamic data;
+@dynamic date;
 @dynamic locationDescription;
 @dynamic category;
 @dynamic placemark;

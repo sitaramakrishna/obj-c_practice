@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSNumber *latitude;
 @property (nullable, nonatomic, retain) NSNumber *longitude;
-@property (nullable, nonatomic, retain) NSDate *data;
+@property (nullable, nonatomic, retain) NSDate *date;
 @property (nullable, nonatomic, retain) NSString *locationDescription;
 @property (nullable, nonatomic, retain) NSString *category;
 @property (nullable, nonatomic, retain) CLPlacemark *placemark;

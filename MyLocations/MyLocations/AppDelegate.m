@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 #import "CurrentLocationViewController.h"
+#import "LocationsViewController.h"
+
+NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectContextSaveDidFailNotification";
 
 @interface AppDelegate ()
 
@@ -30,7 +33,27 @@
     
     currentLocationViewController.managedObjectContext = self.managedObjectContext;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fatalCoreDataError:) name:ManagedObjectContextSaveDidFailNotification object:nil];
+    
+    UINavigationController *navigationController = (UINavigationController *)tabBarController.viewControllers[1];
+    
+    LocationsViewController *locationsViewController = (LocationsViewController *)navigationController.viewControllers[0];
+    
+    locationsViewController.managedObjectContext = self.managedObjectContext;
+    
     return YES;
+}
+
+-(void)fatalCoreDataError:(NSNotification *)notification {
+    
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Internal Error", nil) message:NSLocalizedString(@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience.", nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertView addAction:cancel];
+    
+    #define ROOTVIEW [[[UIApplication sharedApplication] keyWindow] rootViewController]
+    [ROOTVIEW presentViewController:alertView animated:YES completion:nil];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

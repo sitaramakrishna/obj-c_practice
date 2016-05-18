@@ -9,6 +9,7 @@
 #import "LocationDetailsViewController.h"
 #import "CategoryPickerViewController.h"
 #import "HudView.h"
+#import "Location.h"
 
 @interface LocationDetailsViewController () <UITextViewDelegate> // Class extension
 
@@ -20,7 +21,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, strong) NSString *descriptionText;
 @property (nonatomic, strong) NSString *categoryName;
-
+@property (nonatomic, strong) NSDate *date;
 @end
 
 @implementation LocationDetailsViewController
@@ -31,7 +32,7 @@
         
         _descriptionText = @"";
         _categoryName = @"No Category";
-        
+        _date = [NSDate date];
     }
     
     return self;
@@ -52,7 +53,7 @@
         self.addressLabel.text = @"No Address Found";
     }
     
-    self.dateLabel.text = [self formatDate:[NSDate date]];
+    self.dateLabel.text = [self formatDate:_date];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyboard:)];
     gestureRecognizer.cancelsTouchesInView = NO;
@@ -89,12 +90,30 @@
     return [formatter stringFromDate:theDate];
 }
 
+
 - (IBAction)done:(id)sender {
 
     HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
     
     hudView.text = @"Tagged";
 
+    // Saving to Core Data
+    Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    
+    location.locationDescription = _descriptionText;
+    location.category = _categoryName;
+    location.latitude = @(self.coordinate.latitude);
+    location.longitude = @(self.coordinate.longitude);
+    location.date = _date;
+    location.placemark = self.placemark;
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Error: %@", error);
+        FATAL_CORE_DATA_ERROR(error);
+        return;
+    }
+    
     [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
 }
 

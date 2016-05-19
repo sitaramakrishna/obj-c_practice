@@ -14,7 +14,17 @@ Most sample projects here are based on those from Sam Lu's 100 Days of Swift, ex
 <h5>Project 12 - Locations with Core Data - May 12, 2016</h5>
   I learned how to:
   <ul>
-    <li>Get the user's location in coordinates and reverse geocode an address</li>
+    <li>Core Data:</li>
+        <ul>
+            <li>Save, fetch, update, & delete objects and handle errors from Core Data</li>
+            <li>Pass around NSManagedObjectContext to let all view controllers save to the same data store</li>
+            <li>Update Core Data objects across view controllers & sort object fetching by categories with NSFetchedResultsController</li>  
+        </ul>
+    <li>Core Location:</li>
+        <ul>
+            <li>Get the user's location in coordinates and reverse geocode an address</li>
+            <li>Work with MKMapView to display user's current location, location-based pins, and a self-sizing view that fits all pins</li>
+        </ul>
   </ul>
 <h5>Project 11 - Dynamic Contacts App - May 9, 2016</h5>
   I learned how to:

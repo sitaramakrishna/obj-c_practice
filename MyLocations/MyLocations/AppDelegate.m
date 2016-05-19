@@ -11,6 +11,7 @@
 #import "CurrentLocationViewController.h"
 #import "LocationsViewController.h"
 #import "MapViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectContextSaveDidFailNotification";
 
@@ -19,6 +20,7 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 
 @end
 

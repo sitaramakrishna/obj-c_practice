@@ -143,6 +143,7 @@
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         [_locationManager startUpdatingLocation];
+        [_locationManager requestWhenInUseAuthorization];
         _updatingLocation = YES;
         
         [self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:60];

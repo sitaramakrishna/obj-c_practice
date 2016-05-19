@@ -49,6 +49,8 @@
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [NSFetchedResultsController deleteCacheWithName:@"Locations"];
+    
     [self performFetch];
     
     
@@ -180,6 +182,7 @@
              NSLog(@"*** NSFetchedResultsChangeDelete (object)");
              [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
              break;
+            
         case NSFetchedResultsChangeUpdate:
             
             NSLog(@"*** NSFetchedResultsChangeUpdate (object)");

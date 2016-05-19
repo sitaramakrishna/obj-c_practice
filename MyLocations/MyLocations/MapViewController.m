@@ -163,9 +163,8 @@
             [self.mapView removeAnnotations:_locations];
         }
         
-        NSLog(@"foundObjects %@", foundObjects);
-        
-        [_locations arrayByAddingObjectsFromArray:foundObjects];
+        [_locations removeAllObjects];
+        _locations = [NSMutableArray arrayWithArray:foundObjects];
         
         [self.mapView addAnnotations:_locations];
         
@@ -174,6 +173,7 @@
         NSLog(@"*** New location inserted");
         [self.mapView addAnnotation:location];
         [_locations addObject:location];
+        
         
         NSLog(@"location %@", location);
         

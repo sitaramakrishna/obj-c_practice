@@ -174,9 +174,6 @@
         [self.mapView addAnnotation:location];
         [_locations addObject:location];
         
-        
-        NSLog(@"location %@", location);
-        
     } else if ([action isEqualToString:@"deleted"]) {
         
         NSLog(@"*** Location deleted");

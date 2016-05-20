@@ -22,6 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *locationDescription;
 @property (nullable, nonatomic, retain) NSString *category;
 @property (nullable, nonatomic, retain) CLPlacemark *placemark;
+@property (nullable, nonatomic, retain) NSNumber *photoId;
+
++(NSInteger)nextPhotoId;
+
+-(BOOL)hasPhoto;
+-(NSString *)photoPath;
+-(UIImage *)photoImage;
 
 @end
 

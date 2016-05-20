@@ -144,9 +144,9 @@
 		C233F0001CE524450096C778 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
-				C2F027831CEACDBD0074EAEA /* Frameworks */,
 				C233F0041CE524450096C778 /* AppDelegate.h */,
 				C233F0051CE524450096C778 /* AppDelegate.m */,
+				C2F027831CEACDBD0074EAEA /* Frameworks */,
 				C2F0276A1CEA7B370074EAEA /* Model */,
 				C233F0391CE528830096C778 /* View */,
 				C233F03A1CE528880096C778 /* Controller */,

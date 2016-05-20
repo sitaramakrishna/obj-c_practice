@@ -300,6 +300,9 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXv-6B-quG">
+                                                    <rect key="frame" x="112" y="8" width="167" height="27.5"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -430,8 +433,10 @@
                         <outlet property="categoryLabel" destination="x4U-lv-kwC" id="gcv-JW-6PQ"/>
                         <outlet property="dateLabel" destination="r7i-RA-zcu" id="2YV-kO-rkG"/>
                         <outlet property="descriptionTextView" destination="JmO-T0-0ie" id="VyG-4m-5k1"/>
+                        <outlet property="imageView" destination="DXv-6B-quG" id="DRz-aF-cbY"/>
                         <outlet property="latitudeLabel" destination="8d9-9R-6Mg" id="vCl-mR-9yU"/>
                         <outlet property="longitudeLabel" destination="X8N-wH-L9P" id="5Zy-oa-0mf"/>
+                        <outlet property="photoLabel" destination="CrG-uo-2gW" id="TFZ-4j-beJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilv-Q2-tVF" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -87,6 +87,17 @@
     gestureRecognizer.cancelsTouchesInView = NO;
     
     [self.tableView addGestureRecognizer:gestureRecognizer];
+    
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    self.descriptionTextView.textColor = [UIColor whiteColor];
+    self.descriptionTextView.backgroundColor = [UIColor blackColor];
+    
+    self.photoLabel.textColor = [UIColor whiteColor];
+    self.photoLabel.highlightedTextColor = self.photoLabel.textColor;
+    
+    self.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    self.addressLabel.highlightedTextColor = self.addressLabel.textColor;
 }
 
 - (void)showImage:(UIImage *)image {
@@ -119,10 +130,10 @@
     
     [line addText:placemark.subThoroughfare withSeparator:@""];
     [line addText:placemark.thoroughfare withSeparator:@" "];
-    [line addText:placemark.locality withSeparator:@", "];
+    [line addText:placemark.locality withSeparator:@"\n"];
     [line addText:placemark.administrativeArea withSeparator:@", "];
     [line addText:placemark.postalCode withSeparator:@" "];
-    [line addText:placemark.country withSeparator:@", "];
+    [line addText:placemark.country withSeparator:@"\n"];
     
     return line;
     
@@ -332,6 +343,28 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         [self showPhotoMenu];
     }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    cell.backgroundColor = [UIColor blackColor];
+    
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
+    
+    cell.detailTextLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    cell.detailTextLabel.highlightedTextColor = cell.detailTextLabel.textColor;
+    
+    UIView *selectionView = [[UIView alloc]initWithFrame:CGRectZero];
+    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    cell.selectedBackgroundView = selectionView;
+    
+    if (indexPath.row == 2) {
+        UILabel *addressLabel = (UILabel *)[cell viewWithTag:100];
+        addressLabel.textColor = [UIColor whiteColor];
+        addressLabel.highlightedTextColor = addressLabel.textColor;
+    }
+    
 }
 
 #pragma mark - UITextViewDelegate

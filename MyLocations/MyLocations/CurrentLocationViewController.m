@@ -20,6 +20,9 @@
 @property (nonatomic,strong) CLPlacemark *placemark; // object that contains the address
 @property (nonatomic) BOOL performingReverseGeocoding;
 @property (nonatomic,strong) NSError *lastGeocodingError;
+@property (nonatomic, strong) UIButton *logoButton;
+@property (nonatomic) BOOL *logoVisible;
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 
 @end
 
@@ -45,7 +48,66 @@
     
     self.tabBarController.delegate = self;
     self.tabBarController.tabBar.translucent = NO;
+    
 }
+
+-(void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    [self updateLabels];
+    [self configureGetButton];
+    
+}
+
+- (void)hideLogoView {
+    
+    if (!_logoVisible) {
+        return;
+    }
+    
+    _logoVisible = NO;
+    self.containerView.hidden = NO;
+    
+    self.containerView.center = CGPointMake(self.view.bounds.size.width * 2.0f, 40.0f + self.containerView.bounds.size.height / 2.0f);
+    
+    CABasicAnimation *panelMover = [CABasicAnimation animationWithKeyPath:@"position"];
+    panelMover.removedOnCompletion = NO;
+    panelMover.fillMode = kCAFillModeForwards;
+    panelMover.duration = 0.6;
+    panelMover.fromValue = [NSValue valueWithCGPoint:self.containerView.center];
+    panelMover.toValue = [NSValue valueWithCGPoint:CGPointMake(160.0f, self.containerView.center.y)];
+    panelMover.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    panelMover.delegate = self;
+    [self.containerView.layer addAnimation:panelMover forKey:@"panelMover"];
+    
+    CABasicAnimation *logoMover = [CABasicAnimation animationWithKeyPath:@"position"];
+    logoMover.removedOnCompletion = NO;
+    logoMover.fillMode = kCAFillModeForwards;
+    logoMover.duration = 0.5;
+    logoMover.fromValue = [NSValue valueWithCGPoint:_logoButton.center];
+    logoMover.toValue = [NSValue valueWithCGPoint:CGPointMake(-160.0f, _logoButton.center.y)];
+    logoMover.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    [_logoButton.layer addAnimation:logoMover forKey:@"logoMover"];
+    
+    CABasicAnimation *logoRotator = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    logoRotator.removedOnCompletion = NO;
+    logoRotator.fillMode = kCAFillModeForwards;
+    logoRotator.duration = 0.5;
+    logoRotator.fromValue = @0.0f;
+    logoRotator.toValue = @(-2.0f * M_PI);
+    logoRotator.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    [_logoButton.layer addAnimation:logoRotator forKey:@"logoRotator"];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    
+    self.containerView.center = CGPointMake(self.view.bounds.size.width / 2.0f, 40.0f + self.containerView.bounds.size.height / 2.0f);
+    
+    [_logoButton.layer removeAllAnimations];
+    [_logoButton removeFromSuperview];
+    _logoButton = nil;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -53,6 +115,10 @@
 }
 
 - (IBAction)getLocation:(id)sender {
+    
+    if (_logoVisible) {
+        [self hideLogoView];
+    }
     
     if (_updatingLocation) {
         [self stopLocationManager];
@@ -83,13 +149,13 @@
 -(NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark {
     
     NSMutableString *line1 = [NSMutableString stringWithCapacity:100];
-    [self addText:thePlacemark.subThoroughfare toLine:line1 withSeparator:@""];
-    [self addText:thePlacemark.thoroughfare toLine:line1 withSeparator:@" "];
+    [line1 addText:thePlacemark.subThoroughfare withSeparator:@""];
+    [line1 addText:thePlacemark.thoroughfare withSeparator:@" "];
     
     NSMutableString *line2 = [NSMutableString stringWithCapacity:100];
-    [self addText:thePlacemark.locality toLine:line2 withSeparator:@""];
-    [self addText:thePlacemark.administrativeArea toLine:line2 withSeparator:@" "];
-    [self addText:thePlacemark.postalCode toLine:line2 withSeparator:@" "];
+    [line2 addText:thePlacemark.locality withSeparator:@""];
+    [line2 addText:thePlacemark.administrativeArea withSeparator:@" "];
+    [line2 addText:thePlacemark.postalCode withSeparator:@" "];
     
     if ([line1 length] == 0) {
         [line2 appendString:@"\n "];
@@ -131,6 +197,9 @@
             _addressLabel.text = @"No Address Found";
         }
         
+        _latitudeTextLabel.hidden = NO;
+        _longitudeTextLabel.hidden = NO;
+        
     } else {
         
         _latitudeLabel.text = @"";
@@ -150,10 +219,14 @@
         } else if (_updatingLocation) {
             statusMessage = @"Searching...";
         } else {
-            statusMessage = @"Press the Button to Start";
+            statusMessage = @"";
+            [self showLogoView];
         }
         
         self.messageLabel.text = statusMessage;
+        
+        _latitudeTextLabel.hidden = YES;
+        _longitudeTextLabel.hidden = YES;
     }
 }
 
@@ -161,8 +234,20 @@
     
     if (_updatingLocation) {
         [self.getButton setTitle:@"Stop" forState:UIControlStateNormal];
+        
+        if (_spinner == nil) {
+            
+            _spinner = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+            _spinner.center = CGPointMake(self.messageLabel.center.x, self.messageLabel.center.y + _spinner.bounds.size.height/2.0f + 15.0f);
+            [_spinner startAnimating];
+            [self.containerView addSubview:_spinner];
+        }
+        
     } else {
         [self.getButton setTitle:@"Get My Location" forState:UIControlStateNormal];
+        
+        [_spinner removeFromSuperview];
+        _spinner = nil;
     }
 }
 
@@ -302,6 +387,27 @@
     tabBarController.tabBar.translucent = (viewController != self);
     
     return YES;
+}
+
+#pragma mark - Logo View 
+
+-(void)showLogoView {
+    
+    if (_logoVisible) {
+        return;
+    }
+    
+    _logoVisible = YES;
+    self.containerView.hidden = YES;
+    
+    _logoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_logoButton setBackgroundImage:[UIImage imageNamed:@"Logo"] forState:UIControlStateNormal];
+    [_logoButton sizeToFit];
+    [_logoButton addTarget:self action:@selector(getLocation:) forControlEvents:UIControlEventTouchUpInside];
+    _logoButton.center = CGPointMake(self.view.bounds.size.width / 2.0f, self.view.bounds.size.height / 2.0f- 49.0f);
+    
+    [self.view addSubview:_logoButton];
+    
 }
 
 

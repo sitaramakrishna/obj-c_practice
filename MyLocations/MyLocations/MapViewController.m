@@ -12,7 +12,7 @@
 #import "Location.h"
 #import "LocationDetailsViewController.h"
 
-@interface MapViewController () <MKMapViewDelegate>
+@interface MapViewController () <MKMapViewDelegate, UINavigationBarDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) NSMutableArray *locations;
@@ -214,6 +214,8 @@
             annotationView.canShowCallout = YES;
             annotationView.animatesDrop = NO;
             annotationView.pinTintColor = [UIColor greenColor];
+            annotationView.tintColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
+            mapView.tintColor = [UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.7f];
             
             // 4 -- Add a detail disclosure button to the annotation view's accessory view
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -258,6 +260,11 @@
     }
 }
 
+#pragma mark - UINavigationBarDelegate 
 
+-(UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
+    
+    return UIBarPositionTopAttached;
+}
 
 @end

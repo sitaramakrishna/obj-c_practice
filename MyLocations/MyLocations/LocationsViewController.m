@@ -53,6 +53,10 @@
     
     [NSFetchedResultsController deleteCacheWithName:@"Locations"];
     
+    self.tableView.backgroundColor = [UIColor blackColor];
+    
+    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    
     [self performFetch];
     
     
@@ -167,7 +171,23 @@
         }
     }
     
+    if (image == nil) {
+        image = [UIImage imageNamed:@"No Photo"];
+    }
     locationCell.photoImageView.image = image;
+    locationCell.backgroundColor = [UIColor blackColor];
+    locationCell.descriptionLabel.textColor = [UIColor whiteColor];
+    locationCell.descriptionLabel.highlightedTextColor = locationCell.descriptionLabel.textColor;
+    locationCell.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    locationCell.addressLabel.highlightedTextColor = locationCell.addressLabel.textColor;
+    
+    UIView *selectionView = [[UIView alloc]initWithFrame:CGRectZero];
+    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    locationCell.selectedBackgroundView = selectionView;
+    
+    locationCell.photoImageView.layer.cornerRadius = locationCell.photoImageView.bounds.size.width / 2.0f;
+    locationCell.photoImageView.clipsToBounds = YES;
+    locationCell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -180,7 +200,30 @@
     // The <NSFetchedResultsSectionInfo> protocol contains methods for obtaining the name of section and list of object in that section
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     
-    return [sectionInfo name];
+    return [[sectionInfo name] uppercaseString];
+}
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(15.0f, tableView.sectionHeaderHeight - 14.0f, 300.0f, 14.0f)];
+    
+    label.font = [UIFont boldSystemFontOfSize:11.0f];
+    label.text = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
+    label.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    label.backgroundColor = [UIColor clearColor];
+    UIView *separator = [[UIView alloc] initWithFrame: CGRectMake(15.0f, tableView.sectionHeaderHeight - 0.5f, tableView.bounds.size.width - 15.0f, 0.5f)];
+    separator.backgroundColor = tableView.separatorColor;
+    
+    UIView *view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 0.0f, tableView.bounds.size.width, tableView.sectionHeaderHeight)];
+    
+    view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.85f];
+                            
+    [view addSubview:label];
+    [view addSubview:separator];
+    
+    return view;
+    
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

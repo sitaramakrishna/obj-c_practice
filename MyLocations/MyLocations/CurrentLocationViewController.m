@@ -10,7 +10,7 @@
 #import "LocationDetailsViewController.h"
 #import "NSMutableString+AddText.h"
 
-@interface CurrentLocationViewController ()
+@interface CurrentLocationViewController () <UITabBarControllerDelegate>
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) CLLocation *location;
@@ -42,6 +42,9 @@
     
     [self updateLabels];
     [self configureGetButton];
+    
+    self.tabBarController.delegate = self;
+    self.tabBarController.tabBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -293,5 +296,18 @@
     }
 }
 
+#pragma mark - UITabBarControllerDelegate
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    tabBarController.tabBar.translucent = (viewController != self);
+    
+    return YES;
+}
+
 
 @end
+
+
+
+
+

@@ -22,6 +22,7 @@
 		C24B823C1CEBF3B00066C3A5 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B823B1CEBF3B00066C3A5 /* LocationCell.m */; };
 		C24B823E1CECE1230066C3A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24B823D1CECE1230066C3A5 /* MapKit.framework */; };
 		C24B82411CECE1BB0066C3A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B82401CECE1BB0066C3A5 /* MapViewController.m */; };
+		C24B824A1CF010A80066C3A5 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B82491CF010A80066C3A5 /* UIImage+Resize.m */; };
 		C2A1CC541CE678550046810A /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC531CE678550046810A /* LocationDetailsViewController.m */; };
 		C2A1CC571CE69AF80046810A /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC561CE69AF80046810A /* CategoryPickerViewController.m */; };
 		C2F027641CEA505D0074EAEA /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F027631CEA505D0074EAEA /* HudView.m */; };
@@ -76,6 +77,8 @@
 		C24B823D1CECE1230066C3A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C24B823F1CECE1BB0066C3A5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		C24B82401CECE1BB0066C3A5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		C24B82481CF010A80066C3A5 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		C24B82491CF010A80066C3A5 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		C2A1CC521CE678550046810A /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
 		C2A1CC531CE678550046810A /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		C2A1CC551CE69AF80046810A /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				C2F0277E1CEAC1B50074EAEA /* Location+CoreDataProperties.m */,
 				C2F0277F1CEAC1B50074EAEA /* Location.h */,
 				C2F027801CEAC1B50074EAEA /* Location.m */,
+				C24B82481CF010A80066C3A5 /* UIImage+Resize.h */,
+				C24B82491CF010A80066C3A5 /* UIImage+Resize.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				C233F0031CE524450096C778 /* main.m in Sources */,
 				C24B81AD1CEBAF620066C3A5 /* LocationsViewController.m in Sources */,
 				C2A1CC571CE69AF80046810A /* CategoryPickerViewController.m in Sources */,
+				C24B824A1CF010A80066C3A5 /* UIImage+Resize.m in Sources */,
 				C24B823C1CEBF3B00066C3A5 /* LocationCell.m in Sources */,
 				C2A1CC541CE678550046810A /* LocationDetailsViewController.m in Sources */,
 			);

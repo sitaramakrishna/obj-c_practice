@@ -117,23 +117,47 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80K-JU-y9w">
-                                            <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80K-JU-y9w">
+                                            <rect key="frame" x="82" y="8" width="238" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ZMk-cZ-cvl"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z6-6A-0Kr">
-                                            <rect key="frame" x="8" y="27" width="304" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z6-6A-0Kr">
+                                            <rect key="frame" x="82" y="27" width="238" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="RCr-bz-xe4"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xlo-gy-PxA">
+                                            <rect key="frame" x="15" y="3" width="52" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="6eO-7W-gC5"/>
+                                                <constraint firstAttribute="height" constant="52" id="Hcn-gf-57h"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Xlo-gy-PxA" firstAttribute="leading" secondItem="QLV-fJ-E1b" secondAttribute="leading" constant="15" id="B5r-VX-MYq"/>
+                                        <constraint firstItem="80K-JU-y9w" firstAttribute="leading" secondItem="Xlo-gy-PxA" secondAttribute="trailing" constant="15" id="FgO-XC-fff"/>
+                                        <constraint firstItem="5z6-6A-0Kr" firstAttribute="centerY" secondItem="QLV-fJ-E1b" secondAttribute="centerY" constant="9.25" id="JT3-lE-LBc"/>
+                                        <constraint firstItem="Xlo-gy-PxA" firstAttribute="centerY" secondItem="QLV-fJ-E1b" secondAttribute="centerY" id="Of6-mY-KkN"/>
+                                        <constraint firstAttribute="trailing" secondItem="5z6-6A-0Kr" secondAttribute="trailing" id="QB3-UV-31z"/>
+                                        <constraint firstItem="5z6-6A-0Kr" firstAttribute="leading" secondItem="Xlo-gy-PxA" secondAttribute="trailing" constant="15" id="SYw-CD-ppr"/>
+                                        <constraint firstItem="80K-JU-y9w" firstAttribute="centerY" secondItem="QLV-fJ-E1b" secondAttribute="centerY" constant="-9.75" id="VIx-D4-3Hn"/>
+                                        <constraint firstAttribute="trailing" secondItem="80K-JU-y9w" secondAttribute="trailing" id="wzg-hS-5e1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="5z6-6A-0Kr" id="NGh-kz-0QK"/>
                                     <outlet property="descriptionLabel" destination="80K-JU-y9w" id="3Us-c6-FEq"/>
+                                    <outlet property="photoImageView" destination="Xlo-gy-PxA" id="vqc-Dc-Zqr"/>
                                     <segue destination="Udp-AM-3YG" kind="presentation" identifier="EditLocation" id="9zS-aP-l7j"/>
                                 </connections>
                             </tableViewCell>
@@ -530,6 +554,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jvL-kb-bZW"/>
+        <segue reference="9zS-aP-l7j"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,7 @@
 #import "Location.h"
 #import "LocationCell.h"
 #import "LocationDetailsViewController.h"
+#import "UIImage+Resize.h"
 
 @interface LocationsViewController () <NSFetchedResultsControllerDelegate>
 
@@ -147,6 +148,17 @@
     } else {
         locationCell.addressLabel.text = [NSString stringWithFormat: @"Lat: %.8f, Long: %.8f", [location.latitude doubleValue], [location.longitude doubleValue]];
     }
+    
+    UIImage *image = nil;
+    
+    if ([location hasPhoto]) {
+        image = [location photoImage];
+        if (image != nil) {
+            image = [image resizedImageWithBounds:CGSizeMake(52, 52)];
+        }
+    }
+    
+    locationCell.photoImageView.image = image;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

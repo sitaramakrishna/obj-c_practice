@@ -1,12 +1,12 @@
 # obj-c_practice
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
-<h5>Project 14 - Local Notifications - May 14, 2016 (Stupid Sh*t No One Needs & Terrible Ideas Hackathon)</h5>
+<h5>Project 14 - Local Notifications - May 17, 2016 (Stupid Sh*t No One Needs & Terrible Ideas Hackathon)</h5>
   I learned how to:
   <ul>
     <li>Implement local notifications using a time interval</li>
   </ul>
-<h5>Project 13 - Core Motion - May 14, 2016</h5>
+<h5>Project 13 - Core Motion - May 17, 2016</h5>
   I learned how to:
   <ul>
     <li>Use Core Motion to access iPhone's gyroscope & accelerometer</li>
@@ -25,6 +25,12 @@ Most sample projects here are based on those from Sam Lu's 100 Days of Swift, ex
             <li>Get the user's location in coordinates and reverse geocode an address</li>
             <li>Work with MKMapView to display user's current location, location-based pins, and a self-sizing view that fits all pins</li>
             <li>Dynamically update pins using an NSManagedObjectContextObjectsDidChangeNotification observer</li>
+        </ul>
+    <li>Misc:</li>
+        <ul>
+            <li>Save & retrieve photos from the Documents directory</li>
+            <li>Dynamically adjust size of table view height based on aspect ratio of an image</li>
+            <li>Change appearance of all nav and tab bar controllers</li>
         </ul>
   </ul>
 <h5>Project 11 - Dynamic Contacts App - May 9, 2016</h5>

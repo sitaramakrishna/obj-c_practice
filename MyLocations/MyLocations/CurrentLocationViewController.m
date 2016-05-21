@@ -8,6 +8,7 @@
 
 #import "CurrentLocationViewController.h"
 #import "LocationDetailsViewController.h"
+#import "NSMutableString+AddText.h"
 
 @interface CurrentLocationViewController ()
 
@@ -78,7 +79,32 @@
 
 -(NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark {
     
-    return [NSString stringWithFormat:@"%@ %@\n%@ %@ %@", thePlacemark.subThoroughfare, thePlacemark.thoroughfare, thePlacemark.locality, thePlacemark.administrativeArea, thePlacemark.postalCode];
+    NSMutableString *line1 = [NSMutableString stringWithCapacity:100];
+    [self addText:thePlacemark.subThoroughfare toLine:line1 withSeparator:@""];
+    [self addText:thePlacemark.thoroughfare toLine:line1 withSeparator:@" "];
+    
+    NSMutableString *line2 = [NSMutableString stringWithCapacity:100];
+    [self addText:thePlacemark.locality toLine:line2 withSeparator:@""];
+    [self addText:thePlacemark.administrativeArea toLine:line2 withSeparator:@" "];
+    [self addText:thePlacemark.postalCode toLine:line2 withSeparator:@" "];
+    
+    if ([line1 length] == 0) {
+        [line2 appendString:@"\n "];
+        return line2;
+    } else {
+        [line1 appendString:@"\n"];
+        [line1 appendString:line2];
+        return line1;
+    }
+}
+
+-(void)addText:(NSString *)text toLine:(NSMutableString *)line withSeparator:(NSString *)separator {
+    if (text != nil) {
+        if ([line length] > 0) {
+            [line appendString:separator];
+        }
+        [line appendString:text];
+    }
 }
 
 -(void)updateLabels {

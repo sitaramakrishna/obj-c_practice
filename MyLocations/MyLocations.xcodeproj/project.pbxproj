@@ -24,6 +24,8 @@
 		C24B82411CECE1BB0066C3A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B82401CECE1BB0066C3A5 /* MapViewController.m */; };
 		C24B824A1CF010A80066C3A5 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B82491CF010A80066C3A5 /* UIImage+Resize.m */; };
 		C24B824D1CF0266B0066C3A5 /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B824C1CF0266B0066C3A5 /* NSMutableString+AddText.m */; };
+		C24B82531CF0EC3C0066C3A5 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B82521CF0EC3C0066C3A5 /* MyTabBarController.m */; };
+		C24B82561CF0ED120066C3A5 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B82551CF0ED120066C3A5 /* MyNavigationController.m */; };
 		C2A1CC541CE678550046810A /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC531CE678550046810A /* LocationDetailsViewController.m */; };
 		C2A1CC571CE69AF80046810A /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A1CC561CE69AF80046810A /* CategoryPickerViewController.m */; };
 		C2F027641CEA505D0074EAEA /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F027631CEA505D0074EAEA /* HudView.m */; };
@@ -82,6 +84,10 @@
 		C24B82491CF010A80066C3A5 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		C24B824B1CF0266B0066C3A5 /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
 		C24B824C1CF0266B0066C3A5 /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
+		C24B82511CF0EC3C0066C3A5 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		C24B82521CF0EC3C0066C3A5 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
+		C24B82541CF0ED120066C3A5 /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
+		C24B82551CF0ED120066C3A5 /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
 		C2A1CC521CE678550046810A /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
 		C2A1CC531CE678550046810A /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		C2A1CC551CE69AF80046810A /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
@@ -199,6 +205,10 @@
 				C2F027631CEA505D0074EAEA /* HudView.m */,
 				C24B823A1CEBF3B00066C3A5 /* LocationCell.h */,
 				C24B823B1CEBF3B00066C3A5 /* LocationCell.m */,
+				C24B82511CF0EC3C0066C3A5 /* MyTabBarController.h */,
+				C24B82521CF0EC3C0066C3A5 /* MyTabBarController.m */,
+				C24B82541CF0ED120066C3A5 /* MyNavigationController.h */,
+				C24B82551CF0ED120066C3A5 /* MyNavigationController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -385,10 +395,12 @@
 				C24B824D1CF0266B0066C3A5 /* NSMutableString+AddText.m in Sources */,
 				C2F027821CEAC1B50074EAEA /* Location.m in Sources */,
 				C2F027811CEAC1B50074EAEA /* Location+CoreDataProperties.m in Sources */,
+				C24B82531CF0EC3C0066C3A5 /* MyTabBarController.m in Sources */,
 				C233F0031CE524450096C778 /* main.m in Sources */,
 				C24B81AD1CEBAF620066C3A5 /* LocationsViewController.m in Sources */,
 				C2A1CC571CE69AF80046810A /* CategoryPickerViewController.m in Sources */,
 				C24B824A1CF010A80066C3A5 /* UIImage+Resize.m in Sources */,
+				C24B82561CF0ED120066C3A5 /* MyNavigationController.m in Sources */,
 				C24B823C1CEBF3B00066C3A5 /* LocationCell.m in Sources */,
 				C2A1CC541CE678550046810A /* LocationDetailsViewController.m in Sources */,
 			);

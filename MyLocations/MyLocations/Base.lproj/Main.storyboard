@@ -512,10 +512,10 @@
             </objects>
             <point key="canvasLocation" x="2340" y="19"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MyTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -533,10 +533,10 @@
             </objects>
             <point key="canvasLocation" x="104" y="19"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="eBZ-1r-6Sw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Udp-AM-3YG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Udp-AM-3YG" customClass="MyNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xaf-Ki-WHz">

@@ -26,6 +26,10 @@ Most sample projects here are based on those from Sam Lu's 100 Days of Swift, ex
             <li>Work with MKMapView to display user's current location, location-based pins, and a self-sizing view that fits all pins</li>
             <li>Dynamically update pins using an NSManagedObjectContextObjectsDidChangeNotification observer</li>
         </ul>
+    <li>Core Animation:</li>
+        <ul>
+            <li>Used CABasicAnimation properties to animate views along x & z axes</li>
+        </ul>
     <li>Misc:</li>
         <ul>
             <li>Save & retrieve photos from the Documents directory</li>

@@ -10,7 +10,9 @@
 
 @interface Candy : NSObject
 
++(id)sharedInstance; // Our singleton
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSMutableArray *arrayOfCandy;
 
 @end

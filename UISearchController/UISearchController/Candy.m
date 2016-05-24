@@ -10,16 +10,31 @@
 
 @implementation Candy
 
--(id)initWithCategory:(NSString *)category andName:(NSString *)name {
++(id)sharedInstance {
     
-    if (self == [super init]) {
+    static Candy *instance = nil;
+    
+    @synchronized (self) {
         
-        self.category = category;
-        self.name = name;
+        if (instance == nil) {
+            instance = [[self alloc]init];
+        }
+        
+    }
+    
+    return instance;
+}
+
+-(id)init {
+    
+    if (self = [super init]) {
+        
+        self.arrayOfCandy = [[NSMutableArray alloc]init];
         
     }
     
     return self;
 }
+
 
 @end

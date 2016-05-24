@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		C25E82FA1CF2D46300E939BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E82F91CF2D46300E939BA /* main.m */; };
 		C25E82FD1CF2D46300E939BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E82FC1CF2D46300E939BA /* AppDelegate.m */; };
-		C25E83001CF2D46300E939BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E82FF1CF2D46300E939BA /* ViewController.m */; };
-		C25E83031CF2D46300E939BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25E83011CF2D46300E939BA /* Main.storyboard */; };
-		C25E83051CF2D46300E939BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25E83041CF2D46300E939BA /* Assets.xcassets */; };
 		C25E83081CF2D46300E939BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25E83061CF2D46300E939BA /* LaunchScreen.storyboard */; };
 		C25E83131CF2D46300E939BA /* UISearchControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E83121CF2D46300E939BA /* UISearchControllerTests.m */; };
 		C25E831E1CF2D46300E939BA /* UISearchControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E831D1CF2D46300E939BA /* UISearchControllerUITests.m */; };
 		C25E832E1CF2D4F800E939BA /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E832D1CF2D4F800E939BA /* Candy.m */; };
+		C25E83301CF372AA00E939BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C25E832F1CF372AA00E939BA /* Assets.xcassets */; };
+		C25E83331CF372F700E939BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C25E83311CF372F700E939BA /* Main.storyboard */; };
+		C25E833A1CF373FC00E939BA /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E83391CF373FC00E939BA /* MasterViewController.m */; };
+		C25E833D1CF3743400E939BA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E833C1CF3743400E939BA /* DetailViewController.m */; };
+		C25E83411CF391E400E939BA /* UIColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C25E83401CF391E400E939BA /* UIColor+ColorExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +42,6 @@
 		C25E82F91CF2D46300E939BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C25E82FB1CF2D46300E939BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C25E82FC1CF2D46300E939BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C25E82FE1CF2D46300E939BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C25E82FF1CF2D46300E939BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C25E83021CF2D46300E939BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C25E83041CF2D46300E939BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C25E83071CF2D46300E939BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C25E83091CF2D46300E939BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C25E830E1CF2D46300E939BA /* UISearchControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UISearchControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +52,14 @@
 		C25E831F1CF2D46300E939BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C25E832C1CF2D4F800E939BA /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candy.h; sourceTree = "<group>"; };
 		C25E832D1CF2D4F800E939BA /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candy.m; sourceTree = "<group>"; };
+		C25E832F1CF372AA00E939BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/CandySearch Starter/CandySearch/Assets.xcassets"; sourceTree = "<group>"; };
+		C25E83321CF372F700E939BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../Downloads/CandySearch Starter/CandySearch/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		C25E83381CF373FC00E939BA /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C25E83391CF373FC00E939BA /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C25E833B1CF3743400E939BA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C25E833C1CF3743400E939BA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C25E833F1CF391E400E939BA /* UIColor+ColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorExtensions.h"; sourceTree = "<group>"; };
+		C25E83401CF391E400E939BA /* UIColor+ColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +110,12 @@
 		C25E82F71CF2D46300E939BA /* UISearchController */ = {
 			isa = PBXGroup;
 			children = (
-				C25E832B1CF2D4EC00E939BA /* Model */,
 				C25E82FB1CF2D46300E939BA /* AppDelegate.h */,
 				C25E82FC1CF2D46300E939BA /* AppDelegate.m */,
-				C25E82FE1CF2D46300E939BA /* ViewController.h */,
-				C25E82FF1CF2D46300E939BA /* ViewController.m */,
-				C25E83011CF2D46300E939BA /* Main.storyboard */,
-				C25E83041CF2D46300E939BA /* Assets.xcassets */,
+				C25E832B1CF2D4EC00E939BA /* Model */,
+				C25E83341CF3730A00E939BA /* Controller */,
+				C25E83311CF372F700E939BA /* Main.storyboard */,
+				C25E832F1CF372AA00E939BA /* Assets.xcassets */,
 				C25E83061CF2D46300E939BA /* LaunchScreen.storyboard */,
 				C25E83091CF2D46300E939BA /* Info.plist */,
 				C25E82F81CF2D46300E939BA /* Supporting Files */,
@@ -149,8 +154,21 @@
 			children = (
 				C25E832C1CF2D4F800E939BA /* Candy.h */,
 				C25E832D1CF2D4F800E939BA /* Candy.m */,
+				C25E833F1CF391E400E939BA /* UIColor+ColorExtensions.h */,
+				C25E83401CF391E400E939BA /* UIColor+ColorExtensions.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C25E83341CF3730A00E939BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C25E83381CF373FC00E939BA /* MasterViewController.h */,
+				C25E83391CF373FC00E939BA /* MasterViewController.m */,
+				C25E833B1CF3743400E939BA /* DetailViewController.h */,
+				C25E833C1CF3743400E939BA /* DetailViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,9 +274,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25E83331CF372F700E939BA /* Main.storyboard in Resources */,
 				C25E83081CF2D46300E939BA /* LaunchScreen.storyboard in Resources */,
-				C25E83051CF2D46300E939BA /* Assets.xcassets in Resources */,
-				C25E83031CF2D46300E939BA /* Main.storyboard in Resources */,
+				C25E83301CF372AA00E939BA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C25E83001CF2D46300E939BA /* ViewController.m in Sources */,
+				C25E833D1CF3743400E939BA /* DetailViewController.m in Sources */,
+				C25E833A1CF373FC00E939BA /* MasterViewController.m in Sources */,
 				C25E832E1CF2D4F800E939BA /* Candy.m in Sources */,
+				C25E83411CF391E400E939BA /* UIColor+ColorExtensions.m in Sources */,
 				C25E82FD1CF2D46300E939BA /* AppDelegate.m in Sources */,
 				C25E82FA1CF2D46300E939BA /* main.m in Sources */,
 			);
@@ -322,20 +342,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C25E83011CF2D46300E939BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C25E83021CF2D46300E939BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C25E83061CF2D46300E939BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C25E83071CF2D46300E939BA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C25E83311CF372F700E939BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C25E83321CF372F700E939BA /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

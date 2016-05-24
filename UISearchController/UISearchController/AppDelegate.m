@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DetailViewController.h"
+#import "UIColor+ColorExtensions.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +19,37 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UISplitViewController *splitViewController = (UISplitViewController *)_window.rootViewController;
+    UINavigationController *navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1];
+    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+    splitViewController.delegate = self;
+    
+    [[UISearchBar appearance]setBarTintColor:[UIColor candyGreen]];
+    [[UISearchBar appearance]setTintColor:[UIColor whiteColor]];
+//    [[UITextField appearanceWhenContainedInInstancesOfClasses:(UISearchBar.self)] setTintColor:[UIColor candyGreen]];
+    
     return YES;
+}
+
+-(BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+    
+    UINavigationController *secondaryAsNavController = (UINavigationController *)secondaryViewController;
+    if (!secondaryAsNavController) {
+        return false;
+    }
+    
+    DetailViewController *topAsDetailController = (DetailViewController *)secondaryAsNavController.topViewController;
+    if (!topAsDetailController) {
+        return false;
+    }
+    
+    if (!topAsDetailController.detailCandy) {
+        // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+        return true;
+    }
+    
+    return false;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -41,5 +73,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

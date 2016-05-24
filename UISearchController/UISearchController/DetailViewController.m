@@ -19,7 +19,6 @@
 
 @implementation DetailViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

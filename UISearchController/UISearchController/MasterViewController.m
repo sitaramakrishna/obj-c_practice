@@ -15,6 +15,8 @@
 @property (nonatomic, strong) DetailViewController *detailVC;
 @property (nonatomic, strong) UISplitViewController *splitVC;
 @property (nonatomic, strong) NSArray *candyArray;
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) NSArray *filteredCandies;
 
 @end
 
@@ -69,14 +71,56 @@
     candy9.name = @"Gummi Bear";
     
     [[[Candy sharedInstance]arrayOfCandy]addObjectsFromArray:@[candy1,candy2,candy3,candy4,candy5,candy6,candy7,candy8,candy9]];
-
     
+    _filteredCandies = [NSArray arrayWithArray:[[Candy sharedInstance]arrayOfCandy]];
+    
+    _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    _searchController.searchResultsUpdater = self;
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    _searchController.searchBar.scopeButtonTitles = @[@"All", @"Chocolate", @"Hard", @"Other"];
+    _searchController.searchBar.delegate = self;
+    self.definesPresentationContext = YES;
+    self.tableView.tableHeaderView = _searchController.searchBar;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     self.clearsSelectionOnViewWillAppear = _splitVC.collapsed;
     [super viewWillAppear:animated];
+}
+
+#pragma mark - UISearchResultsUpdating
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    UISearchBar *searchBar = _searchController.searchBar;
+    
+    [self filterContentForSearchText:searchBar.text andScope:searchBar.scopeButtonTitles[searchBar.selectedScopeButtonIndex]];
+    
+}
+
+-(void)filterContentForSearchText:(NSString *)searchText andScope:(NSString *)scope {
+    
+    NSPredicate *predicate;
+    
+    if (![scope isEqualToString:@"All"]) {
+        predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@ AND category == %@", searchText, scope]; // [cd] is case and diacritic insensitive
+    } else {
+        predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
+    }
+    
+    _filteredCandies = [[[Candy sharedInstance]arrayOfCandy] filteredArrayUsingPredicate:predicate];
+    
+    [self.tableView reloadData];
+    
+}
+
+#pragma mark - UISearchBarDelegate
+
+-(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    
+    [self filterContentForSearchText:searchBar.text andScope:searchBar.scopeButtonTitles[selectedScope]];
+    
 }
 
 #pragma mark - Table view data source
@@ -88,6 +132,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+    if (_searchController.active && ![_searchController.searchBar.text isEqualToString:@""]) {
+        return _filteredCandies.count;
+    }
+    
     return [[[Candy sharedInstance]arrayOfCandy]count];
 }
 
@@ -96,7 +144,14 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MasterCell" forIndexPath:indexPath];
     
-    Candy *candy = [[Candy sharedInstance]arrayOfCandy][indexPath.row];
+    Candy *candy;
+    
+    if (_searchController.active && ![_searchController.searchBar.text isEqualToString:@""]) {
+        candy = _filteredCandies[indexPath.row];
+    } else {
+        candy = [[Candy sharedInstance]arrayOfCandy][indexPath.row];
+    }
+    
     cell.textLabel.text = candy.name;
     cell.detailTextLabel.text = candy.category;
     
@@ -112,7 +167,14 @@
         UINavigationController *navigationController = segue.destinationViewController;
         DetailViewController *controller = (DetailViewController *)navigationController.topViewController;
         
-        controller.detailCandy = [[Candy sharedInstance]arrayOfCandy][indexPath.row];
+        Candy *candy;
+        if (_searchController.active && ![_searchController.searchBar.text isEqualToString:@""]) {
+            candy = _filteredCandies[indexPath.row];
+        } else {
+            candy = [[Candy sharedInstance]arrayOfCandy][indexPath.row];
+        }
+        
+        controller.detailCandy = candy;
         controller.navigationItem.leftBarButtonItem = _splitVC.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }

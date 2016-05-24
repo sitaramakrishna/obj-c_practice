@@ -5,7 +5,7 @@ Most sample projects here are based on those from Sam Lu's 100 Days of Swift, ex
 <h5>Project 15 - UISearchController - May 22, 2016</h5>
 I learned how to:
     <ul>
-        <li>...</li>
+        <li>Use extensions to extend a class</li>
     </ul>
 <h5>Project 14 - Local Notifications - May 19, 2016 (Stupid Sh*t No One Needs & Terrible Ideas Hackathon)</h5>
   I learned how to:

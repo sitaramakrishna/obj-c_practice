@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCA-dJ-att" userLabel="mainView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterfeed" translatesAutoresizingMaskIntoConstraints="NO" id="SpS-sa-MZG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-0F-JMd" userLabel="overlay">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dPA-0F-JMd" firstAttribute="top" secondItem="UCA-dJ-att" secondAttribute="top" id="E0c-ic-DLn"/>
+                                    <constraint firstAttribute="trailing" secondItem="SpS-sa-MZG" secondAttribute="trailing" id="Gsy-6L-nco"/>
+                                    <constraint firstAttribute="bottom" secondItem="SpS-sa-MZG" secondAttribute="bottom" id="KgM-b1-0CJ"/>
+                                    <constraint firstItem="SpS-sa-MZG" firstAttribute="top" secondItem="UCA-dJ-att" secondAttribute="top" id="QSb-Xg-9AC"/>
+                                    <constraint firstAttribute="bottom" secondItem="dPA-0F-JMd" secondAttribute="bottom" id="T8f-hI-rrV"/>
+                                    <constraint firstAttribute="trailing" secondItem="dPA-0F-JMd" secondAttribute="trailing" id="kZo-m9-Djr"/>
+                                    <constraint firstItem="dPA-0F-JMd" firstAttribute="leading" secondItem="UCA-dJ-att" secondAttribute="leading" id="pwV-vb-J3Q"/>
+                                    <constraint firstItem="SpS-sa-MZG" firstAttribute="leading" secondItem="UCA-dJ-att" secondAttribute="leading" id="q8g-Sl-3mI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UCA-dJ-att" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8xj-mg-3Vs"/>
+                            <constraint firstAttribute="trailing" secondItem="UCA-dJ-att" secondAttribute="trailing" id="Bg3-Ef-o1j"/>
+                            <constraint firstItem="UCA-dJ-att" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="njU-eI-ezd"/>
+                            <constraint firstAttribute="bottom" secondItem="UCA-dJ-att" secondAttribute="bottom" id="wm8-2U-0uy"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="SpS-sa-MZG" id="yXx-QB-TxM"/>
+                        <outlet property="mainView" destination="UCA-dJ-att" id="i7m-1b-yoD"/>
+                        <outlet property="overlay" destination="dPA-0F-JMd" id="8Z8-RC-hvh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342.5" y="367.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="twitterfeed" width="750" height="1334"/>
+    </resources>
+</document>

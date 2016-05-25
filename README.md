@@ -2,6 +2,12 @@
 Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
 
+<h5>Project 17 - Spring Animations - May 24, 2016</h5>
+I learned how to:
+    <ul>
+        <li>Use multiple Spring Animations</li>
+        <li>Seamlessly animate from launch screen to view controller</li>
+    </ul>
 <h5>Project 16 - Image Carousel - May 24, 2016</h5>
 I learned how to:
     <ul>
@@ -46,6 +52,7 @@ I learned how to:
         </ul>
     <li>Misc:</li>
         <ul>
+            <li>Unwind segues</li>
             <li>Save & retrieve photos from the Documents directory</li>
             <li>Dynamically adjust size of table view height based on aspect ratio of an image</li>
             <li>Change appearance of all nav and tab bar controllers</li>

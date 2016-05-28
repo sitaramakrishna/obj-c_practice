@@ -54,7 +54,8 @@
         
         // Get bottom view using resizableSnapshotViewFromRect
         _bottomView = [fromViewController.view resizableSnapshotViewFromRect:fromViewFrame afterScreenUpdates:YES withCapInsets:UIEdgeInsetsMake(0, 0, fromViewFrame.size.height - _openingFrame.origin.y - _openingFrame.size.height, 0)];
-        _bottomView.frame = CGRectMake(0, _openingFrame.origin.y + _openingFrame.size.height, fromViewFrame.size.width, fromViewFrame.size.height = _openingFrame.origin.y = _openingFrame.size.height);
+        
+        _bottomView.frame = CGRectMake(0, _openingFrame.origin.y + _openingFrame.size.height, fromViewFrame.size.width, fromViewFrame.size.height - _openingFrame.origin.y - _openingFrame.size.height);
         
         // Add bottom view to container
         [containerView addSubview:_bottomView];
@@ -71,7 +72,7 @@
             
             // Move top and bottom views out of the screen
             self.topView.frame = CGRectMake(0, -self.topView.frame.size.height, self.topView.frame.size.width, self.topView.frame.size.height);
-            self.bottomView.frame = CGRectMake(0, fromViewFrame.size.height, self.bottomView.frame.size.width, self.bottomView.frame.size.width);
+            self.bottomView.frame = CGRectMake(0, fromViewFrame.size.height, self.bottomView.frame.size.width, self.bottomView.frame.size.height);
             
             // Expand snapshot view to fill entire frame
             snapshotView.frame = toViewController.view.frame;
@@ -106,7 +107,7 @@
             [snapshotView removeFromSuperview];
             
             // Make to view controller visible
-            toViewController.view.alpha = 0.0;
+            toViewController.view.alpha = 1.0;
             
             // Complete transition
             [transitionContext completeTransition:finished];

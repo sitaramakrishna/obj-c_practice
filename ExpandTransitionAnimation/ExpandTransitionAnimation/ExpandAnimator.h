@@ -16,7 +16,6 @@ typedef NS_ENUM(NSInteger, ExpandTransitionMode) {
     ExpandTransitionModeDismiss
 };
 
-+(ExpandAnimator *)animator;
 @property (nonatomic) float presentDuration;
 @property (nonatomic) float dismissDuration;
 @property (nonatomic) CGRect openingFrame;

@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (UIColor *)colorFromHexString:(NSString *)hexString;
 
 @end
 

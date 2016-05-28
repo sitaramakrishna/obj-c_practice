@@ -1,12 +1,13 @@
 # obj-c_practice
-Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. When I say "I learned how to:", I mean 'I learned how to in Objective-C'.
+Most sample projects here are based on those from Sam Lu's 100 Days of Swift, except in Objective-C. In most instances when I say "I learned how to:", I mean 'I learned how to in Objective-C'.
 
 
 <h5>Project 19 - Expand Transition Animation - May 27, 2016</h5>
 I learned how to:
     <ul>
-        <li>Animate a cell to resize to view of screen when clicked</li>
+        <li>Animate a cell to resize to view of next screen with a transitioning delegate</li>
         <li>Use resizableSnapshotViewFromRect to capture a view's appearance and build a new snapshot view</li>
+        <li>Convert the frame of a view to that of another view</li>
     </ul>
 <h5>Project 18 - Custom Transitions - May 26, 2016</h5>
 I learned how to:

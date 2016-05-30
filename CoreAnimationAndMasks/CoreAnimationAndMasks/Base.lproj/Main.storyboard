@@ -91,16 +91,34 @@
                                     <segue destination="6XV-jy-Sij" kind="unwind" unwindAction="prepareForUnwind:" id="hrX-2P-yhP"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Odh-hP-rtU">
+                                <rect key="frame" x="0.0" y="89" width="320" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="AEw-9a-AId"/>
+                                    <constraint firstAttribute="height" constant="150" id="Irm-2u-6J4"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AEw-9a-AId"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Odh-hP-rtU" firstAttribute="centerY" secondItem="x7T-DP-FE0" secondAttribute="centerY" constant="-120" id="Bbr-c9-hSr"/>
                             <constraint firstItem="6rT-h6-uAv" firstAttribute="leading" secondItem="x7T-DP-FE0" secondAttribute="leading" constant="20" id="FQc-K5-2vj"/>
+                            <constraint firstItem="Odh-hP-rtU" firstAttribute="centerX" secondItem="x7T-DP-FE0" secondAttribute="centerX" id="Pge-qc-4aL"/>
                             <constraint firstItem="qa7-aj-dvC" firstAttribute="top" secondItem="6rT-h6-uAv" secondAttribute="bottom" constant="20" id="ZdY-hH-jDv"/>
+                            <constraint firstAttribute="trailing" secondItem="Odh-hP-rtU" secondAttribute="trailing" id="aJL-dx-q8C"/>
+                            <constraint firstItem="Odh-hP-rtU" firstAttribute="leading" secondItem="x7T-DP-FE0" secondAttribute="leading" id="uth-C9-Vpd"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backButton" destination="6rT-h6-uAv" id="shZ-aS-kuI"/>
+                        <outlet property="googleLogo" destination="Odh-hP-rtU" id="HdN-oS-GjI"/>
+                        <outlet property="logoCenterYConst" destination="Bbr-c9-hSr" id="UIm-px-euj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frD-uJ-adj" userLabel="First Responder" sceneMemberID="firstResponder"/>

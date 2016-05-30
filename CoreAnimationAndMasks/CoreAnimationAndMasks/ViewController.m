@@ -14,11 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *googleLogo;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoCenterYConst;
+@property (nonatomic, strong) UIImageView *dotsImageView;
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textFieldWidthConst;
 
-@property (nonatomic, strong) UIButton *micButton;
 @property (nonatomic, strong) CAShapeLayer *circleLayer;
 
 @property (nonatomic, strong) PopAnimator *transition;
@@ -93,15 +93,16 @@
     
     _logoCenterYConst.constant = 120;
     
-    UIImageView *newImageView = [[UIImageView alloc] initWithFrame: _googleLogo.frame];
-    newImageView.image = [UIImage imageNamed:@"googleDots"];
-    newImageView.alpha = 0.0;
-    [_googleLogo.superview insertSubview: newImageView aboveSubview: _googleLogo];
+    _dotsImageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.center.x-32.5, _googleLogo.center.y, 75, 25)];
+    _dotsImageView.image = [UIImage imageNamed:@"googleDots"];
+    _dotsImageView.contentMode = UIViewContentModeScaleAspectFit;
+    _dotsImageView.clipsToBounds = YES;
+    _dotsImageView.alpha = 0.0;
+    [_googleLogo.superview insertSubview: _dotsImageView aboveSubview: _googleLogo];
 
-    
     [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
         
-        newImageView.alpha = 1.0;
+        _dotsImageView.alpha = 1.0;
         _googleLogo.alpha = 0.0;
         
         [self.view layoutIfNeeded];
@@ -132,14 +133,21 @@
     
     [UIView animateWithDuration:0.2 animations:^{
         
+        _dotsImageView.alpha = 0.0;
+        _googleLogo.alpha = 1.0;
+        
         [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+        [_dotsImageView removeFromSuperview];
+
     }];
 }
 
 // Delegate method for presenting view controller
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     
-    NSLog(@"animationControllerForPresentedController");
     _transition.transitionMode = PopTransitionModePresent;
     _transition.origin = _micButton.center;
     _transition.circleColor = _micButton.backgroundColor;

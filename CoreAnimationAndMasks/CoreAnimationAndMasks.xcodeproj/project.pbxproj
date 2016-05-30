@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21A73F11CFBCA320082F802 /* LoginTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A73F01CFBCA320082F802 /* LoginTransitionAnimator.m */; };
+		C21A73F41CFBD2A00082F802 /* LoginTransitionAnimatorDismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A73F31CFBD2A00082F802 /* LoginTransitionAnimatorDismiss.m */; };
 		C2CD941E1CFA7A88009F2098 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CD941D1CFA7A88009F2098 /* main.m */; };
 		C2CD94211CFA7A88009F2098 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CD94201CFA7A88009F2098 /* AppDelegate.m */; };
 		C2CD94241CFA7A88009F2098 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CD94231CFA7A88009F2098 /* ViewController.m */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C21A73EF1CFBCA320082F802 /* LoginTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTransitionAnimator.h; sourceTree = "<group>"; };
+		C21A73F01CFBCA320082F802 /* LoginTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTransitionAnimator.m; sourceTree = "<group>"; };
+		C21A73F21CFBD2A00082F802 /* LoginTransitionAnimatorDismiss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTransitionAnimatorDismiss.h; sourceTree = "<group>"; };
+		C21A73F31CFBD2A00082F802 /* LoginTransitionAnimatorDismiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTransitionAnimatorDismiss.m; sourceTree = "<group>"; };
 		C2CD94191CFA7A88009F2098 /* CoreAnimationAndMasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationAndMasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CD941D1CFA7A88009F2098 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2CD941F1CFA7A88009F2098 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +155,10 @@
 			children = (
 				C2CD944F1CFABD9F009F2098 /* PopAnimator.h */,
 				C2CD94501CFABD9F009F2098 /* PopAnimator.m */,
+				C21A73EF1CFBCA320082F802 /* LoginTransitionAnimator.h */,
+				C21A73F01CFBCA320082F802 /* LoginTransitionAnimator.m */,
+				C21A73F21CFBD2A00082F802 /* LoginTransitionAnimatorDismiss.h */,
+				C21A73F31CFBD2A00082F802 /* LoginTransitionAnimatorDismiss.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,8 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2CD94571CFABE2A009F2098 /* SecondViewController.m in Sources */,
+				C21A73F41CFBD2A00082F802 /* LoginTransitionAnimatorDismiss.m in Sources */,
 				C2CD94241CFA7A88009F2098 /* ViewController.m in Sources */,
 				C2CD94211CFA7A88009F2098 /* AppDelegate.m in Sources */,
+				C21A73F11CFBCA320082F802 /* LoginTransitionAnimator.m in Sources */,
 				C2CD94511CFABD9F009F2098 /* PopAnimator.m in Sources */,
 				C2CD941E1CFA7A88009F2098 /* main.m in Sources */,
 			);
@@ -534,6 +546,7 @@
 				C2CD94481CFA7A88009F2098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2CD94491CFA7A88009F2098 /* Build configuration list for PBXNativeTarget "CoreAnimationAndMasksTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +555,7 @@
 				C2CD944B1CFA7A88009F2098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2CD944C1CFA7A88009F2098 /* Build configuration list for PBXNativeTarget "CoreAnimationAndMasksUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +564,7 @@
 				C2CD944E1CFA7A88009F2098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

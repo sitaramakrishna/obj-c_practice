@@ -1,5 +1,5 @@
 //
-//  LoginTransitionAnimatorDismiss.h
+//  TransitionAnimatorDismiss.h
 //  CoreAnimationAndMasks
 //
 //  Created by David Perkins on 5/29/16.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface LoginTransitionAnimatorDismiss : NSObject <UIViewControllerAnimatedTransitioning>
+@interface TransitionAnimatorDismiss : NSObject <UIViewControllerAnimatedTransitioning>
 
 @end

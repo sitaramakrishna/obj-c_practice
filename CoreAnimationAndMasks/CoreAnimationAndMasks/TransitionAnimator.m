@@ -1,15 +1,16 @@
 //
-//  LoginTransitionAnimator.m
+//  TransitionAnimator.m
 //  CoreAnimationAndMasks
 //
 //  Created by David Perkins on 5/29/16.
 //  Copyright © 2016 David Perkins. All rights reserved.
 //
 
-#import "LoginTransitionAnimator.h"
+#import "TransitionAnimator.h"
 #import "ViewController.h"
 
-@implementation LoginTransitionAnimator
+
+@implementation TransitionAnimator
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
     return 0.5;
@@ -40,24 +41,21 @@
     
     UIBezierPath *bigCirclePath = [UIBezierPath bezierPathWithOvalInRect:endFrame];
     
-    CABasicAnimation *pathAnimation = [[CABasicAnimation alloc]init];
-    pathAnimation.keyPath = @"path";
+    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     pathAnimation.delegate = self;
-    pathAnimation.fromValue = (__bridge id _Nullable)(maskPath.CGPath);
+    pathAnimation.fromValue = (__bridge id _Nullable)((maskPath.CGPath));
     pathAnimation.toValue = bigCirclePath;
     pathAnimation.duration = [self transitionDuration:transitionContext];
     maskLayer.path = bigCirclePath.CGPath;
     [maskLayer addAnimation:pathAnimation forKey:@"pathAnimation"];
-
+    
 }
 
 -(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     
     if (self.transitionContext != nil) {
         
-        BOOL wasCancelled = [_transitionContext transitionWasCancelled];
-        
-//        [self.transitionContext completeTransition:[_transitionContext transitionWasCancelled]];
+        [self.transitionContext completeTransition:![_transitionContext transitionWasCancelled]];
     }
     
 }

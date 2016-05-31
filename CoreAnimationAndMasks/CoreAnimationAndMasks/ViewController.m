@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "SecondViewController.h"
-#import "PopAnimator.h"
+//#import "PopAnimator.h"
+#import "TransitionDelegate.h"
 
 @interface ViewController () <UIViewControllerTransitioningDelegate>
 
@@ -21,7 +22,8 @@
 
 @property (nonatomic, strong) CAShapeLayer *circleLayer;
 
-@property (nonatomic, strong) PopAnimator *transition;
+//@property (nonatomic, strong) PopAnimator *transition;
+@property (nonatomic, strong) TransitionDelegate *transitionDelegate;
 
 @end
 
@@ -31,7 +33,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    _transition = [[PopAnimator alloc]init];
+//    _transition = [[PopAnimator alloc]init];
+    _transitionDelegate = [[TransitionDelegate alloc]init];
     
     _textField.layer.shadowColor = [UIColor blackColor].CGColor;
     _textField.layer.shadowOffset = CGSizeMake(0, 1);
@@ -91,7 +94,7 @@
     
     [self.view layoutIfNeeded];
     
-    _logoCenterYConst.constant = 120;
+    _logoCenterYConst.constant = 160;
     
     _dotsImageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.center.x-32.5, _googleLogo.center.y, 75, 25)];
     _dotsImageView.image = [UIImage imageNamed:@"googleDots"];
@@ -100,7 +103,7 @@
     _dotsImageView.alpha = 0.0;
     [_googleLogo.superview insertSubview: _dotsImageView aboveSubview: _googleLogo];
 
-    [UIView animateWithDuration:0.2 delay:0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+    [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
         
         _dotsImageView.alpha = 1.0;
         _googleLogo.alpha = 0.0;
@@ -115,8 +118,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     SecondViewController *controller = (SecondViewController *)segue.destinationViewController;
-    controller.transitioningDelegate = self;
-    controller.modalPresentationStyle = UIModalPresentationCustom;
+    
+    controller.transitioningDelegate = _transitionDelegate;
     
 }
 
@@ -124,8 +127,8 @@
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     
     SecondViewController *controller = segue.sourceViewController;
-    controller.transitioningDelegate = self;
-    controller.modalPresentationStyle = UIModalPresentationCustom;
+    
+    controller.transitioningDelegate = _transitionDelegate;
     
     [self.view layoutIfNeeded];
     
@@ -145,27 +148,6 @@
     }];
 }
 
-// Delegate method for presenting view controller
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    
-    _transition.transitionMode = PopTransitionModePresent;
-    _transition.origin = _micButton.center;
-    _transition.circleColor = _micButton.backgroundColor;
-    
-    return _transition;
-    
-}
-
-// Delegate method for dismissing view controller
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    
-    NSLog(@"animationControllerForPresentedController");
-    _transition.transitionMode = PopTransitionModeDismiss;
-    _transition.origin = _micButton.center;
-    _transition.circleColor = _micButton.backgroundColor;
-    
-    return _transition;
-}
 
 
 @end

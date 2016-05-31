@@ -58,7 +58,7 @@
                         <outlet property="logoCenterYConst" destination="a7H-Oh-gjL" id="U9b-rZ-mrD"/>
                         <outlet property="textField" destination="lqR-XC-7cg" id="geN-RY-dPk"/>
                         <outlet property="textFieldWidthConst" destination="Kpm-rb-akt" id="Tjn-r5-qSj"/>
-                        <segue destination="EMj-Pz-eaL" kind="show" identifier="segue" id="zga-JW-FqZ"/>
+                        <segue destination="EMj-Pz-eaL" kind="presentation" identifier="segue" id="zga-JW-FqZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

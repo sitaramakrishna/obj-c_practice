@@ -1,21 +1,23 @@
 //
-//  LoginTransitionAnimatorDismiss.m
+//  TransitionAnimatorDismiss.m
 //  CoreAnimationAndMasks
 //
 //  Created by David Perkins on 5/29/16.
 //  Copyright © 2016 David Perkins. All rights reserved.
 //
 
-#import "LoginTransitionAnimatorDismiss.h"
+#import "TransitionAnimatorDismiss.h"
 #import "ViewController.h"
 
-@implementation LoginTransitionAnimatorDismiss
+@implementation TransitionAnimatorDismiss
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
     return 0.5;
 }
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    
+    NSLog(@"animateTransitionDismiss");
     
     ViewController *destinationController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     

@@ -77,20 +77,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rT-h6-uAv">
-                                <rect key="frame" x="20" y="487" width="69" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="0Pv-2F-Sy4"/>
-                                    <constraint firstAttribute="height" constant="61" id="qER-um-3Wc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6XV-jy-Sij" kind="unwind" unwindAction="prepareForUnwind:" id="hrX-2P-yhP"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Odh-hP-rtU">
                                 <rect key="frame" x="0.0" y="89" width="320" height="150"/>
                                 <constraints>
@@ -103,6 +89,26 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speak now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLY-wy-3a3">
+                                <rect key="frame" x="20" y="28" width="85" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rT-h6-uAv">
+                                <rect key="frame" x="20" y="508" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0Pv-2F-Sy4"/>
+                                    <constraint firstAttribute="height" constant="40" id="qER-um-3Wc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6XV-jy-Sij" kind="unwind" identifier="" unwindAction="prepareForUnwind:" id="7mh-kx-Zdv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,13 +118,16 @@
                             <constraint firstItem="qa7-aj-dvC" firstAttribute="top" secondItem="6rT-h6-uAv" secondAttribute="bottom" constant="20" id="ZdY-hH-jDv"/>
                             <constraint firstAttribute="trailing" secondItem="Odh-hP-rtU" secondAttribute="trailing" id="aJL-dx-q8C"/>
                             <constraint firstItem="Odh-hP-rtU" firstAttribute="leading" secondItem="x7T-DP-FE0" secondAttribute="leading" id="uth-C9-Vpd"/>
+                            <constraint firstItem="dLY-wy-3a3" firstAttribute="top" secondItem="x7T-DP-FE0" secondAttribute="top" constant="28" id="vFW-ah-JQq"/>
+                            <constraint firstItem="dLY-wy-3a3" firstAttribute="leading" secondItem="x7T-DP-FE0" secondAttribute="leading" constant="20" id="zLy-VU-Xxp"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="backButton" destination="6rT-h6-uAv" id="shZ-aS-kuI"/>
+                        <outlet property="closeButton" destination="6rT-h6-uAv" id="mpw-0r-XuT"/>
                         <outlet property="googleLogo" destination="Odh-hP-rtU" id="HdN-oS-GjI"/>
                         <outlet property="logoCenterYConst" destination="Bbr-c9-hSr" id="UIm-px-euj"/>
+                        <outlet property="speakNowLabel" destination="dLY-wy-3a3" id="K0k-F6-GJu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frD-uJ-adj" userLabel="First Responder" sceneMemberID="firstResponder"/>

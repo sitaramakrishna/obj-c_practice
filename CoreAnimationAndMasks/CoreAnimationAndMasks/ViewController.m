@@ -28,6 +28,10 @@
 @end
 
 @implementation ViewController
+{
+    CGRect originalFrame;
+    BOOL isOriginalFrameSet;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,17 +61,22 @@
     [_micButton addTarget:self action:@selector(microphoneTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_micButton];
     
-
+    isOriginalFrameSet = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     
     [self.view layoutIfNeeded];
     
+    if (!isOriginalFrameSet) {
+        
+        originalFrame = _googleLogo.frame;
+        
+    }
+    
     _logoCenterYConst.constant = -120;
     _textFieldWidthConst.constant = 300;
     _textField.alpha = 1;
-    
     
     [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
@@ -86,6 +95,14 @@
         
     }];
 }
+
+-(void)viewDidDisappear:(BOOL)animated {
+    
+    _googleLogo.frame = originalFrame;
+    _googleLogo.translatesAutoresizingMaskIntoConstraints = NO;
+    _logoCenterYConst.constant = -105;
+    
+}
      
 
 -(void)microphoneTapped {
@@ -96,22 +113,18 @@
     
     _logoCenterYConst.constant = 160;
     
-    _dotsImageView = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.center.x-32.5, _googleLogo.center.y, 75, 25)];
-    _dotsImageView.image = [UIImage imageNamed:@"googleDots"];
-    _dotsImageView.contentMode = UIViewContentModeScaleAspectFit;
-    _dotsImageView.clipsToBounds = YES;
-    _dotsImageView.alpha = 0.0;
-    [_googleLogo.superview insertSubview: _dotsImageView aboveSubview: _googleLogo];
-
-    [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+    CGRect newFrame = _googleLogo.frame;
+    newFrame.size.height = 10;
+    newFrame.size.width = 60;
+    
+    _googleLogo.translatesAutoresizingMaskIntoConstraints = YES;
+    
+    [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
-        _dotsImageView.alpha = 1.0;
-        _googleLogo.alpha = 0.0;
-        
-        [self.view layoutIfNeeded];
+        _googleLogo.frame = newFrame;
+        _googleLogo.center = CGPointMake(self.view.center.x, self.view.center.y + 160);
         
     } completion:nil];
-    
     
 }
 
@@ -127,7 +140,7 @@
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     
     SecondViewController *controller = segue.sourceViewController;
-    
+
     controller.transitioningDelegate = _transitionDelegate;
     
     [self.view layoutIfNeeded];

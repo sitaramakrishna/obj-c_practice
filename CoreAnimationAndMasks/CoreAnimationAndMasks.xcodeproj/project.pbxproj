@@ -10,6 +10,9 @@
 		C21A73F11CFBCA320082F802 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A73F01CFBCA320082F802 /* TransitionAnimator.m */; };
 		C21A73F41CFBD2A00082F802 /* TransitionAnimatorDismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A73F31CFBD2A00082F802 /* TransitionAnimatorDismiss.m */; };
 		C21A73F71CFC167C0082F802 /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A73F61CFC167C0082F802 /* TransitionDelegate.m */; };
+		C21A73FA1CFDFE490082F802 /* DotAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = C21A73F91CFDFE490082F802 /* DotAnimations.m */; };
+		C21A743B1CFE6A8B0082F802 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21A743A1CFE6A840082F802 /* Roboto-Thin.ttf */; };
+		C21A743D1CFE6B400082F802 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21A743C1CFE6B310082F802 /* Roboto-Light.ttf */; };
 		C2CD941E1CFA7A88009F2098 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CD941D1CFA7A88009F2098 /* main.m */; };
 		C2CD94211CFA7A88009F2098 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CD94201CFA7A88009F2098 /* AppDelegate.m */; };
 		C2CD94241CFA7A88009F2098 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CD94231CFA7A88009F2098 /* ViewController.m */; };
@@ -46,6 +49,10 @@
 		C21A73F31CFBD2A00082F802 /* TransitionAnimatorDismiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimatorDismiss.m; sourceTree = "<group>"; };
 		C21A73F51CFC167C0082F802 /* TransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionDelegate.h; sourceTree = "<group>"; };
 		C21A73F61CFC167C0082F802 /* TransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionDelegate.m; sourceTree = "<group>"; };
+		C21A73F81CFDFE490082F802 /* DotAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotAnimations.h; sourceTree = "<group>"; };
+		C21A73F91CFDFE490082F802 /* DotAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotAnimations.m; sourceTree = "<group>"; };
+		C21A743A1CFE6A840082F802 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		C21A743C1CFE6B310082F802 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		C2CD94191CFA7A88009F2098 /* CoreAnimationAndMasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationAndMasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CD941D1CFA7A88009F2098 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2CD941F1CFA7A88009F2098 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -164,6 +171,10 @@
 				C21A73F31CFBD2A00082F802 /* TransitionAnimatorDismiss.m */,
 				C21A73F51CFC167C0082F802 /* TransitionDelegate.h */,
 				C21A73F61CFC167C0082F802 /* TransitionDelegate.m */,
+				C21A73F81CFDFE490082F802 /* DotAnimations.h */,
+				C21A73F91CFDFE490082F802 /* DotAnimations.m */,
+				C21A743A1CFE6A840082F802 /* Roboto-Thin.ttf */,
+				C21A743C1CFE6B310082F802 /* Roboto-Light.ttf */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -292,6 +303,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21A743D1CFE6B400082F802 /* Roboto-Light.ttf in Resources */,
+				C21A743B1CFE6A8B0082F802 /* Roboto-Thin.ttf in Resources */,
 				C2CD942C1CFA7A88009F2098 /* LaunchScreen.storyboard in Resources */,
 				C2CD94291CFA7A88009F2098 /* Assets.xcassets in Resources */,
 				C2CD94271CFA7A88009F2098 /* Main.storyboard in Resources */,
@@ -325,6 +338,7 @@
 				C2CD94211CFA7A88009F2098 /* AppDelegate.m in Sources */,
 				C21A73F11CFBCA320082F802 /* TransitionAnimator.m in Sources */,
 				C21A73F71CFC167C0082F802 /* TransitionDelegate.m in Sources */,
+				C21A73FA1CFDFE490082F802 /* DotAnimations.m in Sources */,
 				C2CD94511CFABD9F009F2098 /* PopAnimator.m in Sources */,
 				C2CD941E1CFA7A88009F2098 /* main.m in Sources */,
 			);

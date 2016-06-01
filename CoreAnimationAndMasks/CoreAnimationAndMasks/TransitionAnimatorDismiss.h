@@ -11,4 +11,6 @@
 
 @interface TransitionAnimatorDismiss : NSObject <UIViewControllerAnimatedTransitioning>
 
+@property (nonatomic, assign) CGPoint origin;
+
 @end

@@ -11,4 +11,6 @@
 
 @interface TransitionDelegate : NSObject <UIViewControllerTransitioningDelegate>
 
+@property (nonatomic, assign) CGPoint origin;
+
 @end

@@ -42,6 +42,8 @@
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     
+    NSLog(@"animationControlerForDismissedController");
+    
     return _dismiss;
 }
 

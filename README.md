@@ -5,6 +5,8 @@ Most sample projects here are based on those from Sam Lu's 100 Days of Swift, ex
 I learned how to:
     <ul>
         <li>Create complex animations with Core and Spring Animation</li>
+        <li>Build and use masks with Core Animation</li>
+        <li>Use custom fonts</li>
     </ul>
 <h5>Project 19 - Expand Transition Animation - May 27, 2016</h5>
 I learned how to:
